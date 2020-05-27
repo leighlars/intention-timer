@@ -28,3 +28,5 @@ Our estimated schedule is as follows:
 - **6/2/2020** If there is time, add local storage functionality to project. If not, spend the time refactoring and making sure all teammates comprehend the code.
 
 ## Progression
+
+5/26: Ben added the wireframe images to a new folder called wireframes.
