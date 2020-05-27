@@ -7,4 +7,16 @@ class Activity {
     this.id = id;
     this.completed = false;
   }
+
+  startTimer() {
+
+  }
+
+  markComplete() {
+    this.completed = true;
+  }
+
+  saveToStorage() {
+
+  }
 }
