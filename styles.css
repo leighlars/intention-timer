@@ -100,9 +100,17 @@ form {
   grid-column: 2 / 4;
 }
 
+#input-goal-text, #input-minutes-text, #input-seconds-text {
+  background: #46424D;
+  border: none;
+  color: #FFF;
+  border-bottom: #FFF solid 1px;
+  outline: none;
+}
+
 .start-activity-button {
   height: 2em;
-  width: 15em;
+  width: 100%;
   border-radius: 8%;
   grid-column: 3;
 }
