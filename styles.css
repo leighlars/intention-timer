@@ -133,6 +133,8 @@ form {
   width: 100%;
   border-radius: 8%;
   grid-column: 3;
+  background: #FFF;
+  color: #46424D;
 }
 
 .past-activities-section {
