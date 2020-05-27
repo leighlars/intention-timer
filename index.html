@@ -1,1 +1,54 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Playball&family=Playfair+Display&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./styles.css">
+    <title>Intention Timer</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="page-header">INTENTION TIMER</h1>
+    </header>
+    <main>
+      <section class="activities-section">
+        <h2 class="section-header">New Activity</h2>
+          <h4>Select a category:</h4>
+          <div class="button-categories">
+            <button class="study-button">
+              <img src="./assets/study.svg" alt="study" id="study-icon">
+              <p class="category-button-label">Study</p>
+            </button>
+            <button class="meditate-button">
+              <img src="./assets/meditate.svg" alt="meditate" id="meditate-icon">
+              <p class="category-button-label">Meditate</p>
+            </button>
+            <button class="exercise-button">
+              <img src="./assets/exercise.svg" alt="exercise" id="exercise-icon">
+              <p class="category-button-label">Exercise</p>
+            </button>
+          </div>
+          <form>
+            <div class="input-goal">
+              <label for="input-goal-text">What would you like to accomplish during this time?</label>
+              <input type="text" name="input-goal-text" id="input-goal-text">
+            </div>
+            <div class="input-minutes">
+              <label for="input-minutes-text">Minutes</label>
+              <input type="text" name="input-minutes-text" id="input-minutes-text">
+            </div>
+            <div class="input-seconds">
+              <label for="input-seconds-text">Minutes</label>
+              <input type="text" name="input-seconds-text" id="input-seconds-text">
+            </div>
+            <button class="start-activity-button">START ACTIVITY</button>
+          </form>
+      </section>
+      <section class="past-activities-section">
+        <h2 class="section-header">Past Activities</h2>
+        <div class="empty-cards-textbox">
+          <p class="default-card-message">You haven't logged any activities yet. Complete the form to the left to get started!<p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
