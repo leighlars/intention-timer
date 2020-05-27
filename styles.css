@@ -43,11 +43,21 @@ main {
   grid-template-columns: 70% 30%;
   grid-column-gap: 5px;
   color: #CBC9CF;
-  margin-top: 4%;
+  width: 100%;
+  height: 90%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 15px;
+  margin-left: 3%;
+  font-weight: 400;
 }
 
 .activities-section {
-  margin-top: 1.5%;
+  /* margin-top: 1.5%; */
   margin-left: 3%;
   grid-column: 1;
   background: #46424D;
@@ -56,22 +66,27 @@ main {
   height: 100%;
   color: #CBC9CF;
   display: grid;
-  grid-template-rows: 10% 10% 1fr 1fr 1fr;
+  grid-template-rows: 15% 5% 20% 1fr 10%;
   width: 93%;
   height: 100%;
 }
 
 h4 {
+  grid-row: 1;
   font-size: 18px;
-  margin-top: 3%;
   margin-left: 12%;
-  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column-reverse;
+  /* align-items:baseline; */
+  font-weight: 400;
+  /* height: 10%; */
 }
 
 .button-categories {
+  grid-row: 3;
   display: flex;
   justify-content: space-evenly;
-  align-content: center;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
@@ -83,6 +98,7 @@ h4 {
   width: 6em;
   height: 2.8em;
   border-radius: 5%;
+  border: 1px solid white;
 }
 
 #study-icon, #meditate-icon, #exercise-icon {
@@ -99,6 +115,7 @@ form {
   grid-template-columns: 50% 25% 25%;
   grid-column-gap: 1em;
   text-align: left;
+  width: 70%;
 }
 
 .input-goal, .input-minutes, .input-seconds {
@@ -108,6 +125,8 @@ form {
 .input-goal {
   grid-row: 1;
   grid-column: 1 / 4;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-minutes {
@@ -126,7 +145,7 @@ form {
   color: #FFF;
   border-bottom: #FFF solid 1px;
   outline: none;
-  margin-bottom: 1.5em;
+  /* margin-bottom: 1em; */
 }
 
 #input-goal-text {
@@ -135,29 +154,24 @@ form {
 
 #input-minutes-text, #input-seconds-text {
   width: 100%;
+  margin-bottom: 1em;
 }
 
 .start-activity-button {
-  height: 2em;
-  width: 100%;
+  height: 2.5em;
+  width: 110%;
   border-radius: 8%;
   grid-column: 3;
   background: #FFF;
   color: #46424D;
+  font-size: 15px;
 }
 
 .past-activities-section {
-  grid-column: 2;
   display: flex;
   flex-direction: column;
   background: #2B2733;
   height: 100%;
-}
-
-.section-header {
-  margin-top: 4%;
-  margin-left: 3%;
-
 }
 
 .empty-cards-textbox {
