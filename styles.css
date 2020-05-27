@@ -16,20 +16,29 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background: #46424D;
+  background: #2B2733;
   font-family: "Montserrat";
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
   background: #46424D;
   color: #CBC9CF;
   text-align: center;
-  padding: 2%;
   width: 100%;
   height: 10%;
 }
 
+.page-header {
+  width: 100%;
+  margin: auto;
+  font-weight: 300;
+}
+
 main {
+  background: #2B2733;
   display: grid;
   grid-template-columns: 70% 30%;
   color: #CBC9CF;
@@ -37,8 +46,9 @@ main {
 }
 
 .activities-section {
+  margin: 5%;
   grid-column: 1;
-  background: #2B2733;
+  background: #46424D;
   border-right: #46424D solid 5px;
   height: 100%;
   color: #CBC9CF;
@@ -55,14 +65,15 @@ main {
 .study-button, .meditate-button, .exercise-button {
   background: #46424D;
   color: #CBC9CF;
-  font-size: 32px;
-  width: 200px;
-  height: 130px;
+  font-size: 26px;
+  width: 6em;
+  height: 2.8em;
+  border-radius: 5%;
 }
 
 #study-icon, #meditate-icon, #exercise-icon {
-  width: 80px;
-  height: 65px;
+  width: 1em;
+  height: .9em;
 }
 
 .input-goal {
