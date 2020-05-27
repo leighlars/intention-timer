@@ -62,14 +62,15 @@ main {
 .study-button, .meditate-button, .exercise-button {
   background: #46424D;
   color: #CBC9CF;
-  font-size: 32px;
-  width: 200px;
-  height: 130px;
+  font-size: 26px;
+  width: 6em;
+  height: 2.8em;
+  border-radius: 5%;
 }
 
 #study-icon, #meditate-icon, #exercise-icon {
-  width: 80px;
-  height: 65px;
+  width: 1em;
+  height: .9em;
 }
 
 .input-goal {
