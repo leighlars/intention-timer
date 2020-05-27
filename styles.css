@@ -33,7 +33,6 @@ main {
   display: grid;
   grid-template-columns: 70% 30%;
   color: #CBC9CF;
-
 }
 
 .activities-section {
@@ -41,8 +40,34 @@ main {
   background: #2B2733;
   border-right: #46424D solid 5px;
   height: 100%;
+  color: #CBC9CF;
+  display: grid;
+  grid-template-rows: 10% 10% 2fr 1fr 1fr;
 }
 
+.button-categories {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.study-button, .meditate-button, .exercise-button {
+  background: #46424D;
+  color: #CBC9CF;
+  font-size: 32px;
+  width: 200px;
+  height: 130px;
+}
+
+#study-icon, #meditate-icon, #exercise-icon {
+  width: 80px;
+  height: 65px;
+}
+
+.input-goal {
+  grid-row: 3;
+  text-align: center;
+}
 .past-activities-section {
   grid-column: 2;
   display: flex;
