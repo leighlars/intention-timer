@@ -40,6 +40,8 @@ main {
   border-right: #46424D solid 5px;
   height: 100%;
   color: #CBC9CF;
+  display: grid;
+  grid-template-rows: 10% 10% 1fr 1fr;
 }
 
 .past-activities-section {
@@ -48,4 +50,3 @@ main {
   height: 100%;
   color: #CBC9CF;
 }
-
