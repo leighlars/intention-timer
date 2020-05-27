@@ -6,3 +6,9 @@ main {
   display: grid;
   grid-template-columns: 70% 30%;
 }
+
+.activities-section {
+  grid-column: 1;
+  background: #2B2733;
+  border-right: #46424D solid 5px;
+}
