@@ -52,7 +52,10 @@ main {
 
 .study-button, .meditate-button, .exercise-button {
   background: #46424D;
-  color:
+  color: #CBC9CF;
+  font-size: 32px;
+  width: 200px;
+  height: 130px;
 }
 
 #study-icon, #meditate-icon, #exercise-icon {
