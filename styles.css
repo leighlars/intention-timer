@@ -42,18 +42,22 @@ main {
   display: grid;
   grid-template-columns: 70% 30%;
   color: #CBC9CF;
-  margin-top: 1%;
+  margin-top: 4%;
 }
 
 .activities-section {
-  margin: 5%;
+  margin-top: 1.5%;
+  margin-left: 3%;
   grid-column: 1;
   background: #46424D;
   border-right: #46424D solid 5px;
+  box-shadow: 5px 10px #26222D;
   height: 100%;
   color: #CBC9CF;
   display: grid;
   grid-template-rows: 10% 10% 2fr 1fr 1fr;
+  width: 93%;
+  height: 100%;
 }
 
 .button-categories {
@@ -89,8 +93,9 @@ main {
 }
 
 .section-header {
-  margin-top: 6%;
-  margin-left: 6%;
+  margin-top: 4%;
+  margin-left: 3%;
+
 }
 
 .empty-cards-textbox {
