@@ -1,5 +1,32 @@
+html, body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   background: #46424D;
+  font-family: "Montserrat";
+}
+
+header {
+  background: #46424D;
+  color: #CBC9CF;
+  text-align: center;
+  padding: 2%;
+  width: 100%;
+  height: 10%;
 }
 
 main {
