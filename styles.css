@@ -41,6 +41,7 @@ main {
   background: #2B2733;
   display: grid;
   grid-template-columns: 70% 30%;
+  grid-column-gap: 5px;
   color: #CBC9CF;
   margin-top: 1%;
 }
@@ -76,10 +77,36 @@ main {
   height: .9em;
 }
 
-.input-goal {
-  grid-row: 3;
+form {
+  grid-row: 4;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 25% 25%;
   text-align: center;
 }
+
+.input-goal {
+  grid-row: 1;
+  grid-column: 1 / 4;
+}
+
+.input-minutes {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.input-seconds {
+  grid-row: 2;
+  grid-column: 2 / 4;
+}
+
+.start-activity-button {
+  height: 2em;
+  width: 15em;
+  border-radius: 8%;
+  grid-column: 3;
+}
+
 .past-activities-section {
   grid-column: 2;
   display: flex;
