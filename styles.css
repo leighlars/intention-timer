@@ -32,6 +32,7 @@ header {
 main {
   display: grid;
   grid-template-columns: 70% 30%;
+  color: #CBC9CF;
 }
 
 .activities-section {
@@ -69,7 +70,22 @@ main {
 }
 .past-activities-section {
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
   background: #2B2733;
   height: 100%;
-  color: #CBC9CF;
+}
+
+.section-header {
+  margin-top: 6%;
+  margin-left: 6%;
+}
+
+.empty-cards-textbox {
+  margin: 7% auto;
+  justify-content: center;
+  font-size: 15px;
+  text-align: center;
+  height: 10%;
+  width: 80%;
 }
