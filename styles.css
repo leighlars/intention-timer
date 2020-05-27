@@ -11,4 +11,13 @@ main {
   grid-column: 1;
   background: #2B2733;
   border-right: #46424D solid 5px;
+  height: 100%;
+  color: #CBC9CF;
+}
+
+.past-activities-section {
+  grid-column: 2;
+  background: #2B2733;
+  height: 100%;
+  color: #CBC9CF;
 }
