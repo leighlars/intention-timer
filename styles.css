@@ -42,7 +42,7 @@ main {
   display: grid;
   grid-template-columns: 70% 30%;
   color: #CBC9CF;
-  margin: 1%;
+  margin-top: 1%;
 }
 
 .activities-section {
