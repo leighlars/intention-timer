@@ -41,7 +41,7 @@ main {
   height: 100%;
   color: #CBC9CF;
   display: grid;
-  grid-template-rows: 10% 10% 1fr 1fr;
+  grid-template-rows: 10% 10% 2fr 1fr 1fr;
 }
 
 .button-categories {
@@ -63,6 +63,10 @@ main {
   height: 65px;
 }
 
+.input-goal {
+  grid-row: 3;
+  text-align: center;
+}
 .past-activities-section {
   grid-column: 2;
   background: #2B2733;
