@@ -1,4 +1,4 @@
-html, body, h1, h2, h3, h4, h5, h6, p {
+html, body, h1, h2, h4, p {
   margin: 0;
   padding: 0;
 }
@@ -21,20 +21,20 @@ body {
 }
 
 header {
+  position: fixed;
   display: flex;
   justify-content: center;
-  position: fixed;
   background: #46424D;
   color: #FFF;
   text-align: center;
-  width: 100%;
   height: 10%;
+  width: 100%;
 }
 
 .page-header {
-  width: 100%;
-  margin: auto;
   font-weight: 300;
+  margin: auto;
+  width: 100%;
 }
 
 main {
@@ -60,9 +60,9 @@ main {
   grid-column: 1;
   grid-template-rows: 15% 5% 20% 1fr 10%;
   background: #46424D;
+  box-shadow: 5px 10px #26222D;
   color: #CBC9CF;
   margin-left: 3%;
-  box-shadow: 5px 10px #26222D;
   height: 100%;
   width: 93%;
 }
@@ -85,7 +85,9 @@ h4 {
   width: 100%;
 }
 
-.study-button, .meditate-button, .exercise-button {
+.study-button,
+.meditate-button,
+.exercise-button {
   background: #46424D;
   border: 1px solid white;
   border-radius: 5%;
@@ -95,7 +97,9 @@ h4 {
   width: 6em;
 }
 
-#study-icon, #meditate-icon, #exercise-icon {
+#study-icon,
+#meditate-icon,
+#exercise-icon {
   height: .9em;
   width: 1em;
 }
@@ -112,7 +116,9 @@ form {
   width: 70%;
 }
 
-.input-goal, .input-minutes, .input-seconds {
+.input-goal,
+.input-minutes,
+.input-seconds {
   font-size: 18px;
 }
 
@@ -133,7 +139,9 @@ form {
   grid-row: 2;
 }
 
-#input-goal-text, #input-minutes-text, #input-seconds-text {
+#input-goal-text,
+#input-minutes-text,
+#input-seconds-text {
   background: #46424D;
   border: none;
   border-bottom: #FFF solid 1px;
@@ -145,7 +153,8 @@ form {
   width: 100%;
 }
 
-#input-minutes-text, #input-seconds-text {
+#input-minutes-text,
+#input-seconds-text {
   margin-bottom: 1em;
   width: 100%;
 }
