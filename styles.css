@@ -41,7 +41,7 @@ main {
   grid-template-columns: 70% 30%;
   grid-column-gap: 5px;
   color: #CBC9CF;
-  margin-top: 3%;
+  margin-top: 1%;
   height: 90%;
   width: 100%;
 }
@@ -91,10 +91,8 @@ h4 {
   background: #46424D;
   border: 1px solid white;
   border-radius: 5%;
-  color: #CBC9CF;
-  font-size: 3vh;
   height: 80%;
-  width: 16%;
+  width: 18%;
 }
 
 #study-icon,
@@ -102,6 +100,11 @@ h4 {
 #exercise-icon {
   height: .9em;
   width: 1em;
+}
+
+.category-button-label {
+  color: #CBC9CF;
+  font-size: 2.5vh;
 }
 
 form {
@@ -120,7 +123,7 @@ form {
 .input-goal,
 .input-minutes,
 .input-seconds {
-  font-size: 18px;
+  font-size: 3vh;
 }
 
 .input-goal {
