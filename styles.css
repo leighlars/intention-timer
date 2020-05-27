@@ -46,11 +46,15 @@ main {
 
 .button-categories {
   display: flex;
+  background: #46424D;
   justify-content: space-evenly;
   align-content: center;
 }
-.study-button, .meditate-button, .exercise-button {
 
+#study-icon, #meditate-icon, #exercise-icon {
+  width: 300px;
+  height: 120px;
+  font-size: 15px;
 }
 
 .past-activities-section {
