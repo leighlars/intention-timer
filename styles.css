@@ -91,9 +91,9 @@ h4 {
   border: 1px solid white;
   border-radius: 5%;
   color: #CBC9CF;
-  font-size: 26px;
-  height: 2.8em;
-  width: 6em;
+  font-size: 3vh;
+  height: 80%;
+  width: 16%;
 }
 
 #study-icon,
