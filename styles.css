@@ -82,11 +82,18 @@ main {
 }
 
 form {
+  margin-left: 10%;
+  margin-right: 10%;
   grid-row: 4;
   display: grid;
   grid-template-rows: 50% 50%;
   grid-template-columns: 50% 25% 25%;
-  text-align: center;
+  grid-column-gap: 1em;
+  text-align: left;
+}
+
+.input-goal, .input-minutes, .input-seconds {
+  font-size: 18px;
 }
 
 .input-goal {
@@ -110,6 +117,15 @@ form {
   color: #FFF;
   border-bottom: #FFF solid 1px;
   outline: none;
+  margin-bottom: 1.5em;
+}
+
+#input-goal-text {
+  width: 100%;
+}
+
+#input-minutes-text, #input-seconds-text {
+  width: 100%;
 }
 
 .start-activity-button {
