@@ -58,6 +58,7 @@ main {
   grid-column: 1;
   grid-template-rows: 15% 5% 20% 1fr 10%;
   background: #46424D;
+  border-radius: 6px;
   box-shadow: 5px 10px #26222D;
   color: #CBC9CF;
   margin-left: 3%;
@@ -162,9 +163,9 @@ form {
 .start-activity-button {
   grid-column: 3;
   background: #FFF;
-  border-radius: 8%;
+  border-radius: 4px;
   color: #46424D;
-  font-size: 15px;
+  font-size: 2.5vh;
   height: 2.5em;
   width: 110%;
 }
