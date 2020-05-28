@@ -215,9 +215,19 @@ form {
     height: 100%;
     width: 100%;
   }
-  
+
   .new-activities-view {
     margin-bottom: 5%;
     height: 100%;
     width: 100%;
+  }
+
+  .section-header {
+    width: 100%;
+  }
+  
+  .activities-section {
+    height: 90%;
+    width: 93%;
+    margin-bottom: 4%;
   }
