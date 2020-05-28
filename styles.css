@@ -61,25 +61,27 @@ main {
 }
 
 .activities-section {
-  display: grid;
-  grid-column: 1;
-  grid-template-rows: 15% 5% 20% 1fr 10%;
+  display: flex;
+  flex-direction: column;
   background: #46424D;
   border-radius: 6px;
   box-shadow: 5px 10px #26222D;
   color: #CBC9CF;
-  margin-left: 3%;
-  height: 100%;
-  width: 93%;
+  margin-top: 2%;
+  margin-left: 2%;
+  padding: 1%;
+  height: 75%;
+  width: 90%;
 }
 
 h4 {
   display: flex;
   flex-direction: column-reverse;
-  grid-row: 1;
-  font-size: 18px;
-  font-weight: 400;
-  margin-left: 12%;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-bottom: 1%;
 }
 
 .button-categories {
