@@ -15,13 +15,10 @@ newActivitiesView.addEventListener('click', checkEventTarget)
 function checkEventTarget(event) {
   if (event.target === studyButton || event.target === studyIcon) {
     selectStudyButton();
-    console.log(2);
   } else if (event.target === meditateButton || event.target === meditateIcon) {
-    // placeholder();
-    console.log(3);
+    selectMeditateButton();
   } else if (event.target === exerciseButton || event.target === exerciseIcon) {
-    // placeholder();
-    console.log(17);
+    selectExerciseButton();
   } else if (event.target === startActivityButton) {
     placeholder2();
     console.log(11);
@@ -32,4 +29,16 @@ function selectStudyButton() {
   studyButton.style.color = "#B3FD78";
   studyButton.style["border-color"] = "#B3FD78";
   studyIcon.setAttribute("src", "./assets/study-active.svg");
+}
+
+function selectMeditateButton() {
+  meditateButton.style.color = "#C278FD";
+  meditateButton.style["border-color"] = "#C278FD";
+  meditateIcon.setAttribute("src", "./assets/meditate-active.svg");
+}
+
+function selectExerciseButton() {
+  exerciseButton.style.color = "#FD8078";
+  exerciseButton.style["border-color"] = "#FD8078";
+  exerciseIcon.setAttribute("src", "./assets/exercise-active.svg");
 }
