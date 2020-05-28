@@ -28,7 +28,7 @@ header {
   color: #FFF;
   font-weight: lighter;
   text-align: center;
-  height: 10%;
+  height: 100px;
   width: 100%;
 }
 
@@ -42,8 +42,6 @@ header {
   color: #CBC9CF;
   font-weight: 400;
   margin-left: 3%;
-  /* margin-top: auto; */
-  /* margin-bottom: 15px; */
 }
 
 main {
@@ -51,8 +49,8 @@ main {
   grid-template-columns: 70% 30%;
   grid-column-gap: 5px;
   color: #CBC9CF;
-  margin-top: 1%;
-  height: 90%;
+  margin-top: 100px;
+  height: 75%;
   width: 100%;
 }
 
@@ -75,17 +73,18 @@ h4 {
   grid-row: 1;
   font-size: 18px;
   font-weight: 400;
-  margin-left: 12%;
+  margin-left: 10%;
 }
 
 .button-categories {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   grid-row: 3;
-  margin-bottom: 1%;
+  margin-left: 10%;
+  margin-bottom: 10%;
   height: 100%;
-  width: 100%;
+  width: 80%;
 }
 
 .study-button,
@@ -94,8 +93,9 @@ h4 {
   background: #46424D;
   border: 1px solid white;
   border-radius: 5%;
+  padding: 1%;
   height: 80%;
-  width: 18%;
+  width: 22%;
 }
 
 #study-icon,
@@ -117,16 +117,15 @@ form {
   grid-template-rows: 50% 50%;
   grid-column-gap: 1em;
   text-align: left;
-  margin-right: 10%;
-  margin-left: 13%;
+  margin: auto 10%;
   height: 90%;
-  width: 70%;
+  width: 80%;
 }
 
 .input-goal,
 .input-minutes,
 .input-seconds {
-  font-size: 3vh;
+  font-size: 20px;
 }
 
 .input-goal {
@@ -157,13 +156,14 @@ form {
 }
 
 #input-goal-text {
-  width: 100%;
+  margin-bottom: 5%;
+  width: 95%;
 }
 
 #input-minutes-text,
 #input-seconds-text {
   margin-bottom: 1em;
-  width: 100%;
+  width: 90%;
 }
 
 .start-activity-button {
