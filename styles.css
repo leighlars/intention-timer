@@ -270,10 +270,22 @@ form {
    width: 90%;
    margin-bottom: 1%;
  }
- 
+
   .start-activity-button {
     font-size: 20px;
     height: 13%;
     width: 60%;
     margin: 3% auto;
   }
+
+  .past-activities-section {
+   border: none;
+   border-top: 3px solid #46424D;
+   margin-top: 75px;
+   width: 100%;
+ }
+ 
+ #past-header {
+   margin-top: 30px;
+ }
+}
