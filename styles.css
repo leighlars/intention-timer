@@ -1,4 +1,4 @@
-html, body, h1, h2, h3, h4, h5, h6, p {
+html, body, h1, h2, h4, p {
   margin: 0;
   padding: 0;
 }
@@ -21,163 +21,170 @@ body {
 }
 
 header {
+  position: fixed;
   display: flex;
   justify-content: center;
-  position: fixed;
   background: #46424D;
-  color: #CBC9CF;
+  color: #FFF;
+  font-weight: 300;
   text-align: center;
-  width: 100%;
   height: 10%;
+  width: 100%;
 }
 
 .page-header {
-  width: 100%;
   margin: auto;
-  font-weight: 300;
 }
 
 main {
-  background: #2B2733;
   display: grid;
   grid-template-columns: 70% 30%;
   grid-column-gap: 5px;
   color: #CBC9CF;
-  width: 100%;
+  margin-top: 1%;
   height: 90%;
+  width: 100%;
 }
 
 .section-header {
   display: flex;
   align-items: center;
-  margin-top: auto;
-  margin-bottom: 15px;
-  margin-left: 3%;
   font-weight: 400;
+  margin-left: 3%;
 }
 
 .activities-section {
-  /* margin-top: 1.5%; */
-  margin-left: 3%;
-  grid-column: 1;
-  background: #46424D;
-  border-right: #46424D solid 5px;
-  box-shadow: 5px 10px #26222D;
-  height: 100%;
-  color: #CBC9CF;
   display: grid;
+  grid-column: 1;
   grid-template-rows: 15% 5% 20% 1fr 10%;
-  width: 93%;
+  background: #46424D;
+  border-radius: 6px;
+  box-shadow: 5px 10px #26222D;
+  color: #CBC9CF;
+  margin-left: 3%;
   height: 100%;
+  width: 93%;
 }
 
 h4 {
-  grid-row: 1;
-  font-size: 18px;
-  margin-left: 12%;
   display: flex;
   flex-direction: column-reverse;
-  /* align-items:baseline; */
+  grid-row: 1;
+  font-size: 18px;
   font-weight: 400;
-  /* height: 10%; */
+  margin-left: 12%;
 }
 
 .button-categories {
-  grid-row: 3;
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
-  width: 100%;
+  justify-content: space-evenly;
+  grid-row: 3;
+  margin-bottom: 1%;
   height: 100%;
+  width: 100%;
 }
 
-.study-button, .meditate-button, .exercise-button {
+.study-button,
+.meditate-button,
+.exercise-button {
   background: #46424D;
-  color: #CBC9CF;
-  font-size: 26px;
-  width: 6em;
-  height: 2.8em;
-  border-radius: 5%;
   border: 1px solid white;
+  border-radius: 5%;
+  height: 80%;
+  width: 18%;
 }
 
-#study-icon, #meditate-icon, #exercise-icon {
-  width: 1em;
+#study-icon,
+#meditate-icon,
+#exercise-icon {
   height: .9em;
+  width: 1em;
+}
+
+.category-button-label {
+  color: #CBC9CF;
+  font-size: 2.5vh;
 }
 
 form {
-  margin-left: 10%;
-  margin-right: 10%;
-  grid-row: 4;
   display: grid;
-  grid-template-rows: 50% 50%;
+  grid-row: 4;
   grid-template-columns: 50% 25% 25%;
+  grid-template-rows: 50% 50%;
   grid-column-gap: 1em;
   text-align: left;
+  margin-right: 10%;
+  margin-left: 13%;
+  height: 90%;
   width: 70%;
 }
 
-.input-goal, .input-minutes, .input-seconds {
-  font-size: 18px;
+.input-goal,
+.input-minutes,
+.input-seconds {
+  font-size: 3vh;
 }
 
 .input-goal {
-  grid-row: 1;
-  grid-column: 1 / 4;
   display: flex;
   flex-direction: column;
+  grid-column: 1 / 4;
+  grid-row: 1;
 }
 
 .input-minutes {
-  grid-row: 2;
   grid-column: 1;
+  grid-row: 2;
 }
 
 .input-seconds {
-  grid-row: 2;
   grid-column: 2 / 4;
+  grid-row: 2;
 }
 
-#input-goal-text, #input-minutes-text, #input-seconds-text {
+#input-goal-text,
+#input-minutes-text,
+#input-seconds-text {
   background: #46424D;
   border: none;
-  color: #FFF;
   border-bottom: #FFF solid 1px;
+  color: #FFF;
   outline: none;
-  /* margin-bottom: 1em; */
 }
 
 #input-goal-text {
   width: 100%;
 }
 
-#input-minutes-text, #input-seconds-text {
-  width: 100%;
+#input-minutes-text,
+#input-seconds-text {
   margin-bottom: 1em;
+  width: 100%;
 }
 
 .start-activity-button {
-  height: 2.5em;
-  width: 110%;
-  border-radius: 8%;
   grid-column: 3;
   background: #FFF;
+  border-radius: 4px;
   color: #46424D;
-  font-size: 15px;
+  font-size: 2.5vh;
+  height: 100%;
+  width: 110%;
 }
 
 .past-activities-section {
   display: flex;
   flex-direction: column;
   background: #2B2733;
+  border-left: 3px solid #46424D;
   height: 100%;
 }
 
 .empty-cards-textbox {
-  margin: 7% auto;
   justify-content: center;
   font-size: 15px;
+  margin: 7% auto;
   text-align: center;
   height: 10%;
   width: 80%;
