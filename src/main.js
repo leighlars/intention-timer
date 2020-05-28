@@ -14,7 +14,7 @@ newActivitiesView.addEventListener('click', checkEventTarget)
 
 function checkEventTarget(event) {
   if (event.target === studyButton || event.target === studyIcon) {
-    // placeholder();
+    selectStudyButton();
     console.log(2);
   } else if (event.target === meditateButton || event.target === meditateIcon) {
     // placeholder();
@@ -26,4 +26,10 @@ function checkEventTarget(event) {
     placeholder2();
     console.log(11);
   }
+}
+
+function selectStudyButton() {
+  studyButton.style.color = "#B3FD78";
+  studyButton.style["border-color"] = "#B3FD78";
+  studyIcon.setAttribute("src", "./assets/study-active.svg");
 }
