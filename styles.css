@@ -36,24 +36,28 @@ header {
   margin: auto;
 }
 
-.section-header {
+main {
   display: flex;
-  align-items: center;
-  color: #CBC9CF;
-  font-weight: 400;
-  margin-left: 3%;
-  /* margin-top: auto; */
-  /* margin-bottom: 15px; */
+  margin: 20px;
+  height: 100%;
+  width: 100%;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  grid-column-gap: 5px;
+.new-activities-view {
+  height: 100%;
+  width: 70%;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
   color: #CBC9CF;
-  margin-top: 1%;
-  height: 90%;
-  width: 100%;
+  font-weight: 400;
+  margin-top: 75px;
+  margin-bottom: 15px;
+  margin-left: 3%;
+  height: 7%;
+  width: 20%;
 }
 
 .activities-section {
