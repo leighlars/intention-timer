@@ -26,19 +26,34 @@ function checkEventTarget(event) {
 }
 
 function selectStudyButton() {
+  deselectButtons();
   studyButton.style.color = "#B3FD78";
   studyButton.style["border-color"] = "#B3FD78";
   studyIcon.setAttribute("src", "./assets/study-active.svg");
 }
 
 function selectMeditateButton() {
+  deselectButtons();
   meditateButton.style.color = "#C278FD";
   meditateButton.style["border-color"] = "#C278FD";
   meditateIcon.setAttribute("src", "./assets/meditate-active.svg");
 }
 
 function selectExerciseButton() {
+  deselectButtons();
   exerciseButton.style.color = "#FD8078";
   exerciseButton.style["border-color"] = "#FD8078";
   exerciseIcon.setAttribute("src", "./assets/exercise-active.svg");
+}
+
+function deselectButtons() {
+  studyButton.style.color = "#CDC9CF";
+  studyButton.style["border-color"] = "#FFF";
+  studyIcon.setAttribute("src", "./assets/study.svg");
+  meditateButton.style.color = "#CDC9CF";
+  meditateButton.style["border-color"] = "#FFF";
+  meditateIcon.setAttribute("src", "./assets/meditate.svg");
+  exerciseButton.style.color = "#CDC9CF";
+  exerciseButton.style["border-color"] = "#FFF";
+  exerciseIcon.setAttribute("src", "./assets/exercise.svg");
 }
