@@ -122,39 +122,32 @@ h4 {
 }
 
 form {
-  display: grid;
-  grid-row: 4;
-  grid-template-columns: 50% 25% 25%;
-  grid-template-rows: 50% 50%;
-  grid-column-gap: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 18px;
+  font-weight: bolder;
   text-align: left;
-  margin-right: 10%;
-  margin-left: 13%;
-  height: 90%;
-  width: 70%;
+  margin: auto 10%;
+  height: 100%;
+  width: 90%;
 }
 
 .input-goal,
 .input-minutes,
 .input-seconds {
-  font-size: 3vh;
+  margin: 1%;
 }
 
 .input-goal {
   display: flex;
   flex-direction: column;
-  grid-column: 1 / 4;
-  grid-row: 1;
 }
 
-.input-minutes {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.input-seconds {
-  grid-column: 2 / 4;
-  grid-row: 2;
+.min-sec-area {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
 }
 
 #input-goal-text,
@@ -164,17 +157,12 @@ form {
   border: none;
   border-bottom: #FFF solid 1px;
   color: #FFF;
+  font-size: 20px;
   outline: none;
-}
-
-#input-goal-text {
-  width: 100%;
-}
-
-#input-minutes-text,
-#input-seconds-text {
-  margin-bottom: 1em;
-  width: 100%;
+  padding-bottom: 1%;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  width: 90%;
 }
 
 .start-activity-button {
