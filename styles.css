@@ -185,10 +185,12 @@ form {
   height: 103%;
   width: 30%;
 }
+
 #past-header {
   margin-left: 5%;
   width: 50%;
 }
+
 .empty-cards-textbox {
   justify-content: center;
   font-size: 16px;
@@ -198,3 +200,24 @@ form {
   height: 10%;
   width: 80%;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .new-activities-view {
+    margin-bottom: 5%;
+    height: 100%;
+    width: 100%;
+  }
