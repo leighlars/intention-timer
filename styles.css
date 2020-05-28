@@ -25,14 +25,14 @@ header {
   display: flex;
   justify-content: center;
   background: #46424D;
-  color: #FFF;
-  font-weight: lighter;
-  text-align: center;
-  height: 10%;
+  height: 75px;
   width: 100%;
 }
 
 .page-header {
+  color: #FFF;
+  font-weight: lighter;
+  text-align: center;
   margin: auto;
 }
 
