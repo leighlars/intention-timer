@@ -29,4 +29,17 @@ Our estimated schedule is as follows:
 
 ## Progression
 
-5/26: Ben added the wireframe images to a new folder called wireframes.
+5/26: Ben added the wireframe images to a new folder called wireframes. We wrote the initial HTML and CSS for the app's header and new activities sections.
+
+5/27: We finished the crude HTML and CSS, then moved on to responsiveness. Ben wrote defined the Activity class in the activity.js file, while Estelle and Leigh worked on making the app responsive on a mobile desktop. We replaced our grid display styles with Flex.
+
+5/28: We finalized and polished the HTML and CSS for the app's home page. Ben researched methods for upcoming functionality. We will continue to refactor CSS as we go along.
+
+![screenshot of static app desktop view](/readme-images/desktop-view.png)
+*Static app desktop view*
+
+![screenshot of static app in mobile view top](/readme-images/mobile-view-form.png)
+*Static app mobile view*
+
+![screenshot of static app in mobile view bottom](/readme-images/mobile-view-form2.png)
+*Static app mobile view*
