@@ -166,13 +166,16 @@ form {
 }
 
 .start-activity-button {
-  grid-column: 3;
   background: #FFF;
   border-radius: 4px;
   color: #46424D;
-  font-size: 2.5vh;
-  height: 100%;
-  width: 110%;
+  font-size: 2vh;
+  outline: none;
+  margin-top: 5%;
+  margin-left: 65%;
+  margin-bottom: 2%;
+  height: 10%;
+  width: 30%;
 }
 
 #two {
