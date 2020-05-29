@@ -9,8 +9,11 @@ var inputGoalText = document.querySelector("#input-goal-text");
 var inputMinutesText = document.querySelector("#input-minutes-text");
 var inputSecondsText = document.querySelector("#input-seconds-text");
 var startActivityButton = document.querySelector(".start-activity-button");
+var form = document.querySelector("form");
 
-newActivitiesView.addEventListener('click', checkEventTarget)
+
+newActivitiesView.addEventListener('click', checkEventTarget);
+inputMinutesText.addEventListener('keyup', notE);
 
 function checkEventTarget(event) {
   if (event.target === studyButton || event.target === studyIcon) {
@@ -30,6 +33,7 @@ function selectStudyButton() {
   studyButton.style.color = "#B3FD78";
   studyButton.style["border-color"] = "#B3FD78";
   studyIcon.setAttribute("src", "./assets/study-active.svg");
+  var activitySelected = "Study";
 }
 
 function selectMeditateButton() {
@@ -37,6 +41,7 @@ function selectMeditateButton() {
   meditateButton.style.color = "#C278FD";
   meditateButton.style["border-color"] = "#C278FD";
   meditateIcon.setAttribute("src", "./assets/meditate-active.svg");
+  var activitySelected = "Meditate";
 }
 
 function selectExerciseButton() {
@@ -44,6 +49,7 @@ function selectExerciseButton() {
   exerciseButton.style.color = "#FD8078";
   exerciseButton.style["border-color"] = "#FD8078";
   exerciseIcon.setAttribute("src", "./assets/exercise-active.svg");
+  var activitySelected = "Exercise";
 }
 
 function deselectButtons() {
@@ -57,3 +63,11 @@ function deselectButtons() {
   exerciseButton.style["border-color"] = "#FFF";
   exerciseIcon.setAttribute("src", "./assets/exercise.svg");
 }
+// 
+// function notE(event) {
+//   if (event.target === inputMinutesText || inputSecondsText) {
+//     if (event.target.value === "e" || "E") {
+//       event.target.value = '';
+//     }
+//   }
+// }
