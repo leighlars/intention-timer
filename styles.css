@@ -144,6 +144,27 @@ form {
   flex-direction: column;
 }
 
+.category-error,
+.goal-error,
+.min-error,
+.second-error {
+  display: flex;
+}
+
+.category-error {
+  justify-content: center;
+}
+
+.warning-icon {
+  width: 10px;
+}
+
+.error-text {
+  font-size: 14px;
+  color: #EFB7EC;
+  margin-left: 11px;
+}
+
 .min-sec-area {
   display: flex;
   justify-content: space-between;
