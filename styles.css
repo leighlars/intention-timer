@@ -116,6 +116,21 @@ h4 {
   width: 30%;
 }
 
+.study-button.active {
+  border: 1px solid #B3FD78;
+  color: #B3FD78;
+}
+
+.meditate-button.active {
+  border: 1px solid #C278FD;
+  color: #C278FD;
+}
+
+.exercise-button.active {
+  border: 1px solid #FD8078;
+  color: #FD8078;
+}
+
 .category-button-label {
   color: #CBC9CF;
   font-size: 2.5vh;
@@ -142,6 +157,27 @@ form {
 .input-goal {
   display: flex;
   flex-direction: column;
+}
+
+.category-error,
+.goal-error,
+.min-error,
+.second-error {
+  display: flex;
+}
+
+.category-error {
+  justify-content: center;
+}
+
+.warning-icon {
+  width: 10px;
+}
+
+.error-text {
+  font-size: 14px;
+  color: #EFB7EC;
+  margin-left: 11px;
 }
 
 .min-sec-area {
