@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -17,35 +17,36 @@
         <section class="activities-section">
           <h4>Select a category:</h4>
           <div class="button-categories">
-            <button class="study-button category-button-label">
+            <button class="study-button category-button">
               <img src="./assets/study.svg" alt="study" id="study-icon">
-              <!-- <p class="category-button-label">Study</p> -->
               Study
             </button>
-            <button class="meditate-button category-button-label">
+            <button class="meditate-button category-button">
               <img src="./assets/meditate.svg" alt="meditate" id="meditate-icon">
-              <!-- <p class="category-button-label">Meditate</p> -->
               Meditate
             </button>
-            <button class="exercise-button category-button-label">
+            <button class="exercise-button category-button">
               <img src="./assets/exercise.svg" alt="exercise" id="exercise-icon">
-              <!-- <p class="category-button-label">Exercise</p> -->
               Exercise
             </button>
           </div>
+          <div class="category-error"></div>
           <form>
             <div class="input-goal">
               <label for="input-goal-text">What would you like to accomplish during this time?</label>
-              <input type="text" name="input-goal-text" required="required" id="input-goal-text">
+              <input type="text" name="input-goal-text" id="input-goal-text" maxlength="50">
+              <div class="goal-error"></div>
             </div>
             <div class="min-sec-area">
               <div class="input-minutes">
                 <label for="input-minutes-text">Minutes</label>
-                <input type="number" name="input-minutes-text" required="required" id="input-minutes-text">
+                <input type="number" name="input-minutes" id="input-minutes-text" min="0">
+                <div class="min-error"></div>
               </div>
               <div class="input-seconds">
                 <label for="input-seconds-text">Seconds</label>
-                <input type="number" name="input-seconds-text" required="required" id="input-seconds-text">
+                <input type="number" name="input-seconds" id="input-seconds-text" max="60" min="0">
+                <div class="second-error"></div>
               </div>
             </div>
             <button class="start-activity-button">START ACTIVITY</button>
@@ -59,7 +60,7 @@
         </div>
       </section>
     </main>
-    <script src="./src/activity.js"></script>
-    <script src="./src/main.js"></script>
   </body>
+  <script src="./src/activity.js"></script>
+  <script src="./src/main.js"></script>
 </html>
