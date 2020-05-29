@@ -1,73 +1,114 @@
-var newActivitiesView = document.querySelector(".new-activities-view");
-var studyButton = document.querySelector(".study-button");
-var meditateButton = document.querySelector(".meditate-button");
-var exerciseButton = document.querySelector(".exercise-button");
-var studyIcon = document.querySelector("#study-icon");
-var meditateIcon = document.querySelector("#meditate-icon");
-var exerciseIcon = document.querySelector("#exercise-icon");
-var inputGoalText = document.querySelector("#input-goal-text");
-var inputMinutesText = document.querySelector("#input-minutes-text");
-var inputSecondsText = document.querySelector("#input-seconds-text");
-var startActivityButton = document.querySelector(".start-activity-button");
-var form = document.querySelector("form");
+var activitiesSection = document.querySelector(".activities-section");
+var goalInput = document.querySelector("#input-goal-text");
+var minuteInput = document.querySelector("#input-minutes-text");
+var secondsInput = document.querySelector("#input-seconds-text");
+var pastActivities = [];
+var currentActivity;
 
+activitiesSection.addEventListener("click", clickHandler);
 
-newActivitiesView.addEventListener('click', checkEventTarget);
-inputMinutesText.addEventListener('keyup', notE);
+function clickHandler(event) {
+  if (event.target.closest(".category-button")) {
+    var button = event.target.closest(".category-button");
+    var buttonIcon = button.querySelector("img");
+    disableCategoryButtons(button);
+    activateButton(button);
+  }
 
-function checkEventTarget(event) {
-  if (event.target === studyButton || event.target === studyIcon) {
-    selectStudyButton();
-  } else if (event.target === meditateButton || event.target === meditateIcon) {
-    selectMeditateButton();
-  } else if (event.target === exerciseButton || event.target === exerciseIcon) {
-    selectExerciseButton();
-  } else if (event.target === startActivityButton) {
-    placeholder2();
-    console.log(11);
+  if (event.target.closest(".start-activity-button")) {
+    canSubmit(event);
   }
 }
 
-function selectStudyButton() {
-  deselectButtons();
-  studyButton.style.color = "#B3FD78";
-  studyButton.style["border-color"] = "#B3FD78";
-  studyIcon.setAttribute("src", "./assets/study-active.svg");
-  var activitySelected = "Study";
+function activateButton(button) {
+  button.classList.add("active");
+  var buttonIcon = button.querySelector("img");
+  buttonIcon.src = `./assets/${buttonIcon.alt}-active.svg`;
+  activitiesSection.classList.add(`${buttonIcon.alt}`);
 }
 
-function selectMeditateButton() {
-  deselectButtons();
-  meditateButton.style.color = "#C278FD";
-  meditateButton.style["border-color"] = "#C278FD";
-  meditateIcon.setAttribute("src", "./assets/meditate-active.svg");
-  var activitySelected = "Meditate";
+function deactivateButton(button) {
+  var buttonIcon = button.querySelector("img");
+  activitiesSection.classList.remove(`${buttonIcon.alt}`);
+  button.classList.remove("active");
+  var buttonIcon = button.querySelector("img");
+  buttonIcon.src = `./assets/${buttonIcon.alt}.svg`;
 }
 
-function selectExerciseButton() {
-  deselectButtons();
-  exerciseButton.style.color = "#FD8078";
-  exerciseButton.style["border-color"] = "#FD8078";
-  exerciseIcon.setAttribute("src", "./assets/exercise-active.svg");
-  var activitySelected = "Exercise";
+function disableCategoryButtons() {
+  var allCategoryButtons = activitiesSection.querySelectorAll(".category-button");
+  for (var i = 0; i < allCategoryButtons.length; i++) {
+    deactivateButton(allCategoryButtons[i]);
+  }
+
+}
+function canSubmit(event) {
+  event.preventDefault();
+  var hasError = false;
+  checkCategories();
+  checkGoal();
+  checkMinuteInput();
+  checkSecondsInput();
+  if (!hasError) {
+    saveUserActivity();
+    // setTimerView();
+  }
 }
 
-function deselectButtons() {
-  studyButton.style.color = "#CDC9CF";
-  studyButton.style["border-color"] = "#FFF";
-  studyIcon.setAttribute("src", "./assets/study.svg");
-  meditateButton.style.color = "#CDC9CF";
-  meditateButton.style["border-color"] = "#FFF";
-  meditateIcon.setAttribute("src", "./assets/meditate.svg");
-  exerciseButton.style.color = "#CDC9CF";
-  exerciseButton.style["border-color"] = "#FFF";
-  exerciseIcon.setAttribute("src", "./assets/exercise.svg");
+function checkCategories() {
+  if (!activitiesSection.classList.contains('meditate') && !activitiesSection.classList.contains('study') && !activitiesSection.classList.contains('exercise')) {
+    hasError = true;
+    var categoryError = document.querySelector(".category-error");
+        categoryError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
+                                  <p class="category-error-text error-text">An activity is required.</p>`;
+  }
+  setTimeout(removeError, 2500, categoryError);
 }
-// 
-// function notE(event) {
-//   if (event.target === inputMinutesText || inputSecondsText) {
-//     if (event.target.value === "e" || "E") {
-//       event.target.value = '';
-//     }
-//   }
-// }
+
+function checkGoal() {
+  if (goalInput.value.length === 0) {
+    hasError = true;
+    goalInput.setAttribute("style", "border-bottom: #EFB7EC solid 1px");
+    var goalError = document.querySelector(".goal-error");
+    goalError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
+                           <p class="goal-error-text error-text">A description is required.</p>`;
+    }
+    setTimeout(removeError, 2500, goalError, goalInput);
+}
+
+function checkMinuteInput() {
+  if (typeof Number(minuteInput.value) != "number" || minuteInput.value === "") {
+    hasError = true;
+    minuteInput.setAttribute("style", "border-bottom: #EFB7EC solid 1px");
+    var minError = document.querySelector(".min-error");
+    minError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
+                          <p class="min-error-text error-text">A number is required.</p>`;
+  }
+  setTimeout(removeError, 2500, minError, minuteInput);
+}
+function checkSecondsInput() {
+  if (typeof Number(secondsInput.value) != "number" || secondsInput.value === "") {
+    hasError = true;
+    secondsInput.style["border-bottom"] = "#EFB7EC solid 1px";
+    var secondsError = document.querySelector(".second-error");
+    secondsError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
+                          <p class="second-error-text error-text">A number between 0-60 is required.</p>`;
+  }
+  setTimeout(removeError, 2500, secondsError, secondsInput);
+}
+
+function removeError(error, input) {
+  if (error) {
+    error.innerHTML = "";
+  }
+  if (input) {
+    input.setAttribute("style", "border-bottom: #FFF solid 1px");
+  }
+}
+
+function saveUserActivity() {
+  var activitySelected = activitiesSection.classList.contains('meditate') ? 'meditate' :
+  activitiesSection.classList.contains('study') ? 'study' : 'exercise';
+  currentActivity = new Activity(activitySelected, goalInput.value, minuteInput.value, secondsInput.value);
+  pastActivities.push(currentActivity);
+}
