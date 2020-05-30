@@ -90,6 +90,7 @@ button:hover {
   border-radius: 4px;
   color: #FFF;
   font-size: 1.25em;
+  outline: none;
   height: 60%;
   width: 25%;
 }
@@ -120,11 +121,6 @@ label {
   text-align: left;
 }
 
-.inputs {
-  background: transparent;
-  border-bottom: 1px solid #FFF;
-}
-
 .time-box {
   display: flex;
   justify-content: space-between;
@@ -140,14 +136,26 @@ label {
   width: 35%;
 }
 
-.inputs-error {
-  border-bottom: 1px solid #EFB7EC;
+.inputs {
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 1%;
+  outline: none;
+}
+
+.inputs.error {
+  border-bottom: #EFB7EC solid 1px;
 }
 
 .error {
   display: flex;
+  justify-content: center;
+}
+
+.error-text {
+  /* display: flex; */
   color: #EFB7EC;
-  font-size: 11px;
+  font-size: 10px;
   margin: 4px auto;
 }
 
