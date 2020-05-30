@@ -46,7 +46,7 @@ function canSubmit(event) {
   checkSecondsInput();
   if (!hasError) {
     saveUserActivity();
-    // setTimerView();
+    setTimerView();
   }
 }
 
@@ -126,4 +126,12 @@ function saveUserActivity() {
   var secondsInput = document.querySelector("#seconds-value");
   currentActivity = new Activity(activitySelected, goalInput.value, minuteInput.value, secondsInput.value);
   pastActivities.push(currentActivity);
+}
+
+function setTimerView(){
+  form.style.display = "none";
+  var buttonOptionsHide = document.querySelector(".button-options");
+  var currentActivity = document.querySelector(".activities-header");
+  currentActivity.innerText = ("Current Activity");
+
 }
