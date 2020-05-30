@@ -1,4 +1,5 @@
 * {
+  border: none;
   box-sizing: border-box;
   font-family: "Montserrat";
   color: #CBC9CF;
@@ -28,9 +29,9 @@ h3 {
 span {
   display: block;
   color: #FFF;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
-  margin: 30px auto;
+  margin: 10px auto;
   width: 100%;
 }
 
@@ -68,7 +69,7 @@ form {
 .button-options {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 0;
   height: 25%;
   width: 100%;
@@ -88,9 +89,10 @@ button:hover {
   border: 2px solid #FFF;
   border-radius: 4px;
   color: #FFF;
-  font-size: 20px;
-  height: 70%;
-  width: 20%;
+  font-size: 1.25em;
+  outline: none;
+  height: 60%;
+  width: 25%;
 }
 
 .icon {
@@ -114,22 +116,15 @@ button:hover {
 }
 
 label {
-  margin-top: 10px;
   font-weight: bolder;
   font-size: 18px;
   text-align: left;
 }
 
-.inputs {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #FFF;
-}
-
 .time-box {
   display: flex;
   justify-content: space-between;
-  height: 150px;
+  height: 100px;
   width: 100%;
 }
 
@@ -141,14 +136,26 @@ label {
   width: 35%;
 }
 
-.inputs-error {
-  border-bottom: 1px solid #EFB7EC;
+.inputs {
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 1%;
+  outline: none;
+}
+
+.inputs.error {
+  border-bottom: #EFB7EC solid 1px;
 }
 
 .error {
   display: flex;
+  justify-content: center;
+}
+
+.error-text {
+  /* display: flex; */
   color: #EFB7EC;
-  font-size: 11px;
+  font-size: 10px;
   margin: 4px auto;
 }
 
@@ -157,10 +164,11 @@ label {
 }
 
 .start-activity-button {
-  border: none;
   border-radius: 4px;
   color: #46424D;
-  margin-top: 10px;
+  margin-left: 75%;
+  margin-bottom: 10px;
+  text-align: center;
   height: 30px;
   width: 170px;
 }
@@ -183,10 +191,6 @@ article {
     width: 100%;
   }
 
-  form {
-    font-size: 1em;
-  }
-
   .button-options {
     display: flex;
     flex-direction: column;
@@ -205,13 +209,12 @@ article {
     width: 40%;
   }
 
-  article {
-    border:none;
-    border-top: 3px solid #46424D;
-    width: 100%;
-  }
-  
   .start-activity-button {
     margin: 20px auto;
+  }
+
+  article {
+    border-top: 3px solid #46424D;
+    width: 100%;
   }
 }
