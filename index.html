@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -9,56 +9,50 @@
   </head>
   <body>
     <header>
-      <h2 class="page-header">INTENTION TIMER</h2>
+      <h2>INTENTION TIMER</h2>
     </header>
     <main>
       <section class="new-activities-view">
-        <h2 class="section-header" id="new-activity">New Activity</h2>
-        <section class="activities-section">
-          <h4>Select a category:</h4>
-          <div class="button-categories">
-            <button class="study-button category-button">
-              <img src="./assets/study.svg" alt="study" id="study-icon">
+        <h2 class="activities-header">New Activities</h2>
+        <form>
+          <h3>Select a category:</h3>
+          <div class="button-options">
+            <button class="activity-button study-button">
+              <img src="./assets/study.svg" class="icon" id="study" alt="Image of lightbulb">
               Study
             </button>
-            <button class="meditate-button category-button">
-              <img src="./assets/meditate.svg" alt="meditate" id="meditate-icon">
+            <button class="activity-button meditate-button">
+              <img src="./assets/study.svg" class="icon" id="meditate" alt="Image of lotus flower">
               Meditate
             </button>
-            <button class="exercise-button category-button">
-              <img src="./assets/exercise.svg" alt="exercise" id="exercise-icon">
+            <button class="activity-button study-button">
+              <img src="./assets/study.svg" class="icon" id="exercise" alt="Image of tennis shoe">
               Exercise
             </button>
           </div>
-          <div class="category-error"></div>
-          <form>
-            <div class="input-goal">
-              <label for="input-goal-text">What would you like to accomplish during this time?</label>
-              <input type="text" name="input-goal-text" id="input-goal-text" maxlength="50">
-              <div class="goal-error"></div>
+          <span class="activity-error error"></span>
+          <label for="description-input">What would you like to accomplish during this time?</label>
+          <input type="text" class="inputs" id="description-text" maxlength="50" minlength="0">
+          <span class="goal-error error"></span>
+          <div class="time-box">
+            <div class="minutes-box">
+              <label for="minutes" name="time-label">Minutes</label>
+              <input type="number" class="inputs" id="minute-value" max="99" min="0">
+              <span class="min-error error"></span>
             </div>
-            <div class="min-sec-area">
-              <div class="input-minutes">
-                <label for="input-minutes-text">Minutes</label>
-                <input type="number" name="input-minutes" id="input-minutes-text" min="0">
-                <div class="min-error"></div>
-              </div>
-              <div class="input-seconds">
-                <label for="input-seconds-text">Seconds</label>
-                <input type="number" name="input-seconds" id="input-seconds-text" max="60" min="0">
-                <div class="second-error"></div>
-              </div>
+            <div class="seconds-box">
+              <label for="seconds" name="time-label">Seconds</label>
+              <input type="number" class="inputs" id="seconds-value" max="59" minlength="0">
+              <span class="seconds-error error"></span>
             </div>
-            <button class="start-activity-button">START ACTIVITY</button>
-          </form>
-        </section>
+          </div>
+          <button class="start-activity-button">START ACTIVITY</button>
+        </form>
       </section>
-      <section class="past-activities-section">
-        <h2 class="section-header" id="past-header">Past Activities</h2>
-        <div class="empty-cards-textbox">
-          <p class="default-card-message">You haven't logged any activities yet. Complete the form to the left to get started!<p>
-        </div>
-      </section>
+      <article>
+        <h2>Past Activities</h2>
+        <span>You haven't logged any activities yet. </br> Complete the form to the left to get started!</span>
+      </article>
     </main>
   </body>
   <script src="./src/activity.js"></script>
