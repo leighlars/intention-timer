@@ -29,4 +29,15 @@ Our estimated schedule is as follows:
 
 ## Progression
 
-5/26: Ben added the wireframe images to a new folder called wireframes.
+5/26: We set up the ReadMe, Slack channel with our product manager. Ben added the wireframe images to a new folder called wireframes. We reviewed the comp and rubric. We set up the Activity class with its appropriate methods and properties.
+
+5/27: We began work on the crude HTML and CSS for the New Activities (home) View.
+
+5/28: We completed the HTML and CSS and refactored/renamed for readability. We also completed the mobile view. We mainly used driver/navigator for this step. There is a bug in the Start Activity button and needs to be more responsive.
+
+![image of desktop view](/readme-images/desktop-view.png)
+![image of mobile view](/readme-images/mobile-view.png)
+
+5/29: We wrote the functionality for the Start Activity button. When a category button is selected, the border, text, and icon will change to the appropriate color. We wrote validation and an error message for the appropriate empty or incorrectly typed inputs on the form. If a user were to click the Start Activity button and any fields are empty, the minutes/seconds inputs are not a number, or a category has not been selected, the user will be prompted by an alert on the appropriate field.
+
+5/30: We began work on the HTML/CSS and JS for the Current Activity view that is triggered by the Start Activity button. We will need to clean up some HTML/CSS. We did find a bug that the views can switch even if the form is empty. 
