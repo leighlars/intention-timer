@@ -1,6 +1,9 @@
 var form = document.querySelector("form");
+var timerView = document.querySelector(".timer-view");
 var pastActivities = [];
 var currentActivity;
+
+window.onload = (timerView.style.display = "none");
 
 form.addEventListener("click", clickHandler);
 
@@ -46,7 +49,7 @@ function canSubmit(event) {
   checkSecondsInput();
   if (!hasError) {
     saveUserActivity();
-    // setTimerView();
+    setTimerView();
   }
 }
 
@@ -126,4 +129,38 @@ function saveUserActivity() {
   var secondsInput = document.querySelector("#seconds-value");
   currentActivity = new Activity(activitySelected, goalInput.value, minuteInput.value, secondsInput.value);
   pastActivities.push(currentActivity);
+}
+
+function setTimerView(){
+  var newActivToCurrActiv = document.querySelector(".new-activities-view")
+  var buttonOptionsHide = document.querySelector(".button-options");
+  var currentActivity = document.querySelector(".activities-header");
+  newActivToCurrActiv.style.display = "none";
+  currentActivity.innerText = ("Current Activity");
+  appearTimer()
+}
+
+function appearTimer() {
+  if(timerView.style.display === "none") {
+    timerView.style.display = "flex";
+  } else {
+    timerview.style.display = "none";
+  }
+}
+
+// var startingTime = 10;
+// var time = startingTime * 60;
+// var countdowenEL = document.getElementById("countdown");
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown () {
+  var startingTime = 10;
+  var time = startingTime * 60;
+  var countdowenEL = document.getElementById("timer");
+  var minutes = Math.floor(time/60);
+  var seconds = time % 60;
+  countdowenEL.innerHTML = `${minutes}: ${seconds}`;
+  time--;
+
 }
