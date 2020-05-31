@@ -1,6 +1,9 @@
 var form = document.querySelector("form");
+var timerView = document.querySelector(".timer-view");
 var pastActivities = [];
 var currentActivity;
+
+window.onload = (timerView.style.display = "none");
 
 form.addEventListener("click", clickHandler);
 
@@ -129,9 +132,35 @@ function saveUserActivity() {
 }
 
 function setTimerView(){
-  form.style.display = "none";
+  var newActivToCurrActiv = document.querySelector(".new-activities-view")
   var buttonOptionsHide = document.querySelector(".button-options");
   var currentActivity = document.querySelector(".activities-header");
+  newActivToCurrActiv.style.display = "none";
   currentActivity.innerText = ("Current Activity");
+  appearTimer()
+}
+
+function appearTimer() {
+  if(timerView.style.display === "none") {
+    timerView.style.display = "flex";
+  } else {
+    timerview.style.display = "none";
+  }
+}
+
+// var startingTime = 10;
+// var time = startingTime * 60;
+// var countdowenEL = document.getElementById("countdown");
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown () {
+  var startingTime = 10;
+  var time = startingTime * 60;
+  var countdowenEL = document.getElementById("timer");
+  var minutes = Math.floor(time/60);
+  var seconds = time % 60;
+  countdowenEL.innerHTML = `${minutes}: ${seconds}`;
+  time--;
 
 }

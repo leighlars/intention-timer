@@ -5,6 +5,10 @@
   color: #CBC9CF;
 }
 
+.hidden {
+  display: none;
+}
+
 html, body {
   height: 100%
 }
@@ -64,6 +68,45 @@ form {
   padding: 2% 10%;
   height: 80%;
   width: 90%;
+}
+
+.timer-view {
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: #46424D;
+  border-radius: 6px;
+  box-shadow: 5px 10px #26222D;
+  color: #CBC9CF;
+  margin: 1% auto;
+  padding: 2% 10%;
+  height: 100vh;
+  width: 100%;
+}
+
+.timer {
+  background-color: #46424D;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50vh;
+  margin: 0;
+  height: 20%;
+  width: 33%;
+}
+
+.container {
+  width: 30%;
+  height: 30%;
+}
+
+.start-timer-button {
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #B3FD78;
+  padding: 2%;
+  /* height: 100%; */
+  width: 100%;
 }
 
 .button-options {
