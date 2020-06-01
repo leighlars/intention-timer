@@ -29,4 +29,13 @@ Our estimated schedule is as follows:
 
 ## Progression
 
-5/26: Ben added the wireframe images to a new folder called wireframes.
+5/26: Ben added the wireframe images to a new folder called wireframes. We set up the Readme, Slack channel, repo, and projects page.
+
+5/27: Using driver/navigator style collaboration, we constructed crude HTML/CSS for the Form View of the Intention Timer app.
+
+5/28: We completed the HTML/CSS for the page and for the responsive media query in respect to the rubric and given colors.  We added a hover float effect to the buttons.
+
+![image of desktop view](/readme-images/desktop-view.png)
+![image of mobile view](/readme-images/mobile-view.png)
+
+5/29: We began to write the functionality to instantiate the activity class, and add the activity to data model. We crafted form validation: if the fields are empty or activity is not selected, or if the minutes/ seconds input is not a number, or if the description is longer than 50 characters, the user fulfill the requirements to start the activity and move on to the next page. The activity selected displays the appropriately covered icon, text and border as given in the spec.
