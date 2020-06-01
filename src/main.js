@@ -22,10 +22,15 @@ function clickHandler(event) {
 }
 
 function activateButton(button) {
+  var startTimerButton = document.querySelector(".start-timer-button");
   button.classList.add("active");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}-active.svg`;
   form.classList.add(`${btnIcon.id}`);
+  // startTimerButton.style["border-color"] = button.style["border-color"];
+  button.classList.contains("study-button") ? startTimerButton.style["border-color"] =  "#B3FD78" :
+  button.classList.contains("meditate-button") ? startTimerButton.style["border-color"] = "#C278FD" :
+  startTimerButton.style["border-color"] = "#FD8078";
 }
 
 function deactivateButton(button) {
@@ -142,30 +147,34 @@ function saveUserActivity() {
 function setTimerView() {
   var newActivitiesView = document.querySelector(".new-activities-view")
   var timerView = document.querySelector(".timer-view");
+  var userDescription = document.querySelector(".user-description");
+  userDescription.innerText = currentActivity.description;
   newActivitiesView.classList.add("hidden");
   timerView.classList.remove("hidden");
   updateTimer();
 }
 
 function updateTimer() {
-  var userDescription = document.querySelector(".user-description");
-  userDescription.innerText = currentActivity.description;
+  var countdownEL = document.getElementById("timer");
+  var minutes = currentActivity.minutes;
+  var seconds = currentActivity.seconds;
+  countdownEL.innerHTML = `${minutes}:${seconds}`;
 }
 
 // var startingTime = 10;
 // var time = startingTime * 60;
-// var countdowenEL = document.getElementById("countdown");
+// var countdownEL = document.getElementById("countdown");
 
 
-setInterval(updateCountdown, 1000);
+// setInterval(updateCountdown, 1000);
 
 function updateCountdown () {
   var startingTime = 10;
   var time = startingTime * 60;
-  var countdowenEL = document.getElementById("timer");
-  var minutes = Math.floor(time/60);
-  var seconds = time % 60;
-  countdowenEL.innerHTML = `${minutes}: ${seconds}`;
+  // var countdownEL = document.getElementById("timer");
+  // var minutes = currentActivity.minutes;
+  // var seconds = currentActivity.seconds;
+  // countdownEL.innerHTML = `${minutes}: ${seconds}`;
   time--;
 
 }
