@@ -43,7 +43,7 @@ function disableCategoryButtons() {
 
 function canSubmit(event) {
   event.preventDefault();
-  var hasError = false;
+  var hasError;
   checkCategories();
   checkGoal();
   checkMinuteInput();
@@ -57,6 +57,8 @@ function checkCategories() {
     var categoryError = document.querySelector(".activity-error");
         categoryError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                                   <p class="error-text">An activity is required.</p>`;
+  } else {
+    hasError = false;
   }
   setTimeout(removeError, 2000, categoryError);
 }
