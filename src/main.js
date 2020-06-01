@@ -58,7 +58,7 @@ function checkCategories() {
         categoryError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                                   <p class="error-text">An activity is required.</p>`;
   }
-  setTimeout(removeError, 2500, categoryError);
+  setTimeout(removeError, 2000, categoryError);
 }
 
 function checkGoal() {
@@ -70,7 +70,7 @@ function checkGoal() {
     goalError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                            <p class="error-text">A description is required.</p>`;
   }
-  setTimeout(removeError, 2500, goalError, goalInput);
+  setTimeout(removeError, 2000, goalError, goalInput);
 }
 
 function checkMinuteInput() {
@@ -82,19 +82,19 @@ function checkMinuteInput() {
     minError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                           <p class="error-text">A number is required.</p>`;
   }
-  setTimeout(removeError, 2500, minError, minuteInput);
+  setTimeout(removeError, 2000, minError, minuteInput);
 }
 
 function checkSecondsInput() {
   var secondsInput = document.querySelector("#seconds-value");
-  if (typeof Number(secondsInput.value) != "number" || secondsInput.value === "") {
+  if (typeof Number(secondsInput.value) != "number" || secondsInput.value === "" || secondsInput.value >= 60) {
     hasError = true;
     secondsInput.classList.add("error");
     var secondsError = document.querySelector(".seconds-error");
     secondsError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                               <p class="error-text">A number between 0-59 is required.</p>`;
   }
-  setTimeout(removeError, 2500, secondsError, secondsInput);
+  setTimeout(removeError, 2000, secondsError, secondsInput);
 }
 
 function createErrorMsg() {
@@ -110,6 +110,9 @@ function removeError(error, input) {
   }
   if (input) {
     input.classList.remove("error");
+  }
+  if (hasError) {
+    hasError = false;
   }
 }
 
