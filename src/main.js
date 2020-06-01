@@ -1,9 +1,7 @@
 var form = document.querySelector("form");
-var timerView = document.querySelector(".timer-view");
 var pastActivities = [];
 var currentActivity;
 
-window.onload = (timerView.style.display = "none");
 
 form.addEventListener("click", clickHandler);
 
@@ -97,19 +95,22 @@ function checkSecondsInput() {
   setTimeout(removeError, 2000, secondsError, secondsInput);
 }
 
-function createErrorMsg() {
-  var secondsError = document.querySelector(".seconds-error");
-  secondsError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
-                            <p class="second-error error-text">A number between 0-59 is required.</p>`;
-
-}
-
 function removeError(error, input) {
   if (error) {
     error.innerHTML = "";
   }
   if (input) {
     input.classList.remove("error");
+  }
+  if (hasError) {
+    hasError = false;
+  }
+}
+
+function submit() {
+  if (!hasError) {
+    saveUserActivity();
+    setTimerView();
   }
   if (hasError) {
     hasError = false;
@@ -139,22 +140,16 @@ function saveUserActivity() {
   pastActivities.push(currentActivity);
 }
 
-function setTimerView(){
-  var newActivToCurrActiv = document.querySelector(".new-activities-view")
-  var buttonOptionsHide = document.querySelector(".button-options");
-  var currentActivity = document.querySelector(".activities-header");
-  newActivToCurrActiv.style.display = "none";
-  currentActivity.innerText = ("Current Activity");
-  appearTimer();
+function setTimerView() {
+  var newActivitiesView = document.querySelector(".new-activities-view")
+  var buttonOptions = document.querySelector(".button-options");
+  var activitiesHeader = document.querySelector(".activities-header");
+  var timerView = document.querySelector(".timer-view");
+  newActivitiesView.classList.add("hidden");
+  timerView.classList.remove("hidden");
+  activitiesHeader.innerText = ("Current Activity");
 }
 
-function appearTimer() {
-  if(timerView.style.display === "none") {
-    timerView.style.display = "flex";
-  } else {
-    timerview.style.display = "none";
-  }
-}
 
 // var startingTime = 10;
 // var time = startingTime * 60;
