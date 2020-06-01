@@ -106,7 +106,7 @@ function removeError(error, input) {
   }
 }
 
-submit() {
+function submit() {
   if (!hasError) {
     saveUserActivity();
     setTimerView();
