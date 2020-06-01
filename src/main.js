@@ -131,18 +131,10 @@ function saveUserActivity() {
 
 function setTimerView(){
   var newActivitiesView = document.querySelector(".new-activities-view")
-  var buttonOptions = document.querySelector(".button-options");
-  var activitiesHeader = document.querySelector(".activities-header");
   var timerView = document.querySelector(".timer-view");
   newActivitiesView.classList.add("hidden");
   timerView.classList.remove("hidden");
-  activitiesHeader.innerText = ("Current Activity");
 }
-
-
-// var startingTime = 10;
-// var time = startingTime * 60;
-// var countdowenEL = document.getElementById("countdown");
 
 setInterval(updateCountdown, 1000);
 
