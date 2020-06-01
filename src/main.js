@@ -1,4 +1,7 @@
 var form = document.querySelector("form");
+var goalInput = document.querySelector("#description-text");
+var minuteInput = document.querySelector("#minute-value");
+var secondsInput = document.querySelector("#seconds-value");
 var pastActivities = [];
 var currentActivity;
 
@@ -55,12 +58,13 @@ function checkCategories() {
     var categoryError = document.querySelector(".activity-error");
         categoryError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                                   <p class="error-text">An activity is required.</p>`;
+  } else {
+    hasError = false;
   }
   setTimeout(removeError, 2000, categoryError);
 }
 
 function checkGoal() {
-  var goalInput = document.querySelector("#description-text");
   if (goalInput.value.length === 0) {
     hasError = true;
     goalInput.classList.add("error");
@@ -72,7 +76,6 @@ function checkGoal() {
 }
 
 function checkMinuteInput() {
-  var minuteInput = document.querySelector("#minute-value");
   if (typeof Number(minuteInput.value) != "number" || minuteInput.value === "") {
     hasError = true;
     minuteInput.classList.add("error");
@@ -84,7 +87,6 @@ function checkMinuteInput() {
 }
 
 function checkSecondsInput() {
-  var secondsInput = document.querySelector("#seconds-value");
   if (typeof Number(secondsInput.value) != "number" || secondsInput.value === "" || secondsInput.value >= 60) {
     hasError = true;
     secondsInput.classList.add("error");
@@ -133,9 +135,6 @@ function saveUserActivity() {
       activitySelected = btnIcon.id;
     }
   }
-  var goalInput = document.querySelector("#description-text");
-  var minuteInput = document.querySelector("#minute-value");
-  var secondsInput = document.querySelector("#seconds-value");
   currentActivity = new Activity(activitySelected, goalInput.value, minuteInput.value, secondsInput.value);
   pastActivities.push(currentActivity);
 }
@@ -148,9 +147,13 @@ function setTimerView() {
   newActivitiesView.classList.add("hidden");
   timerView.classList.remove("hidden");
   activitiesHeader.innerText = ("Current Activity");
+  updateTimer();
 }
 
-
+function updateTimer() {
+  var userDescription = document.querySelector(".user-description");
+  userDescription.innerText = currentActivity.description;
+}
 // var startingTime = 10;
 // var time = startingTime * 60;
 // var countdowenEL = document.getElementById("countdown");
