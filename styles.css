@@ -95,6 +95,10 @@ form {
   width: 33%;
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   width: 30%;
   height: 30%;
@@ -192,18 +196,18 @@ label {
 
 .error {
   display: flex;
-  justify-content: center;
+  text-align: left;
+  margin: 0;
 }
 
 .error-text {
-  /* display: flex; */
   color: #EFB7EC;
   font-size: 10px;
-  margin: 4px auto;
+  margin-left: 5px;
 }
 
 .warning-icon {
-  width: 10px;
+  width: 7px;
 }
 
 .start-activity-button {
