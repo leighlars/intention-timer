@@ -31,6 +31,7 @@ function deactivateButton(button) {
   button.classList.remove("active");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}.svg`;
+  form.classList.remove(`${btnIcon.id}`);
 }
 
 function disableCategoryButtons() {
@@ -47,10 +48,7 @@ function canSubmit(event) {
   checkGoal();
   checkMinuteInput();
   checkSecondsInput();
-  if (!hasError) {
-    saveUserActivity();
-    setTimerView();
-  }
+  submit();
 }
 
 function checkCategories() {
@@ -111,7 +109,14 @@ function removeError(error, input) {
     error.innerHTML = "";
   }
   if (input) {
-    input.classList.add("error");
+    input.classList.remove("error");
+  }
+}
+
+function submit() {
+  if (!hasError) {
+    saveUserActivity();
+    setTimerView();
   }
 }
 
@@ -137,7 +142,7 @@ function setTimerView(){
   var currentActivity = document.querySelector(".activities-header");
   newActivToCurrActiv.style.display = "none";
   currentActivity.innerText = ("Current Activity");
-  appearTimer()
+  appearTimer();
 }
 
 function appearTimer() {
