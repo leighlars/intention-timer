@@ -45,10 +45,7 @@ function canSubmit(event) {
   checkGoal();
   checkMinuteInput();
   checkSecondsInput();
-  if (!hasError) {
-    saveUserActivity();
-    setTimerView();
-  }
+  submit();
 }
 
 function checkCategories() {
@@ -103,6 +100,16 @@ function removeError(error, input) {
   }
   if (input) {
     input.classList.add("error");
+  }
+  if (hasError) {
+    hasError = false;
+  }
+}
+
+submit() {
+  if (!hasError) {
+    saveUserActivity();
+    setTimerView();
   }
 }
 
