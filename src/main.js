@@ -1,4 +1,7 @@
 var form = document.querySelector("form");
+var goalInput = document.querySelector("#description-text");
+var minuteInput = document.querySelector("#minute-value");
+var secondsInput = document.querySelector("#seconds-value");
 var pastActivities = [];
 var currentActivity;
 
@@ -29,6 +32,7 @@ function deactivateButton(button) {
   button.classList.remove("active");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}.svg`;
+  form.classList.remove(`${btnIcon.id}`);
 }
 
 function disableCategoryButtons() {
@@ -54,12 +58,13 @@ function checkCategories() {
     var categoryError = document.querySelector(".activity-error");
         categoryError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                                   <p class="error-text">An activity is required.</p>`;
+  } else {
+    hasError = false;
   }
-  setTimeout(removeError, 2500, categoryError);
+  setTimeout(removeError, 2000, categoryError);
 }
 
 function checkGoal() {
-  var goalInput = document.querySelector("#description-text");
   if (goalInput.value.length === 0) {
     hasError = true;
     goalInput.classList.add("error");
@@ -67,11 +72,10 @@ function checkGoal() {
     goalError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                            <p class="error-text">A description is required.</p>`;
   }
-  setTimeout(removeError, 2500, goalError, goalInput);
+  setTimeout(removeError, 2000, goalError, goalInput);
 }
 
 function checkMinuteInput() {
-  var minuteInput = document.querySelector("#minute-value");
   if (typeof Number(minuteInput.value) != "number" || minuteInput.value === "") {
     hasError = true;
     minuteInput.classList.add("error");
@@ -79,19 +83,18 @@ function checkMinuteInput() {
     minError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                           <p class="error-text">A number is required.</p>`;
   }
-  setTimeout(removeError, 2500, minError, minuteInput);
+  setTimeout(removeError, 2000, minError, minuteInput);
 }
 
 function checkSecondsInput() {
-  var secondsInput = document.querySelector("#seconds-value");
-  if (typeof Number(secondsInput.value) != "number" || secondsInput.value === "") {
+  if (typeof Number(secondsInput.value) != "number" || secondsInput.value === "" || secondsInput.value >= 60) {
     hasError = true;
     secondsInput.classList.add("error");
     var secondsError = document.querySelector(".seconds-error");
     secondsError.innerHTML = `<img src="./assets/warning.svg" class="warning-icon">
                               <p class="error-text">A number between 0-59 is required.</p>`;
   }
-  setTimeout(removeError, 2500, secondsError, secondsInput);
+  setTimeout(removeError, 2000, secondsError, secondsInput);
 }
 
 function removeError(error, input) {
@@ -99,7 +102,17 @@ function removeError(error, input) {
     error.innerHTML = "";
   }
   if (input) {
-    input.classList.add("error");
+    input.classList.remove("error");
+  }
+  if (hasError) {
+    hasError = false;
+  }
+}
+
+function submit() {
+  if (!hasError) {
+    saveUserActivity();
+    setTimerView();
   }
   if (hasError) {
     hasError = false;
@@ -122,19 +135,27 @@ function saveUserActivity() {
       activitySelected = btnIcon.id;
     }
   }
-  var goalInput = document.querySelector("#description-text");
-  var minuteInput = document.querySelector("#minute-value");
-  var secondsInput = document.querySelector("#seconds-value");
   currentActivity = new Activity(activitySelected, goalInput.value, minuteInput.value, secondsInput.value);
   pastActivities.push(currentActivity);
 }
 
-function setTimerView(){
+function setTimerView() {
   var newActivitiesView = document.querySelector(".new-activities-view")
   var timerView = document.querySelector(".timer-view");
   newActivitiesView.classList.add("hidden");
   timerView.classList.remove("hidden");
+  updateTimer();
 }
+
+function updateTimer() {
+  var userDescription = document.querySelector(".user-description");
+  userDescription.innerText = currentActivity.description;
+}
+
+// var startingTime = 10;
+// var time = startingTime * 60;
+// var countdowenEL = document.getElementById("countdown");
+
 
 setInterval(updateCountdown, 1000);
 
