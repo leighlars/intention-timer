@@ -1,13 +1,13 @@
 # Intention Timer
 ### Developers
-- Ben McClung (https://github.com/AurumValian)
-- Estelle Staffieri (https://github.com/Estaffieri)
-- Leigh Larson (https://github.com/leighlars)
+- [Ben McClung](https://github.com/AurumValian)
+- [Estelle Staffieri](https://github.com/Estaffieri)
+- [Leigh Larson](https://github.com/leighlars)
 ### Project Manager
-- Casey Dallavalle (https://github.com/cbdallavalle)
+- [Casey Dallavalle](https://github.com/cbdallavalle)
 ### Project Links
-- Repo (https://github.com/leighlars/intention-timer)
-- Deployed Page (https://leighlars.github.io/intention-timer/)
+- [Repo](https://github.com/leighlars/intention-timer)
+- [Deployed Page](https://leighlars.github.io/intention-timer/)
 
 ## Set-up
 - Fork the repo and clone down into terminal
