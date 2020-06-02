@@ -268,3 +268,7 @@ form,
     width: 100%;
   }
 }
+
+#timer.complete {
+  font-size: 28px;
+}
