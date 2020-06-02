@@ -18,7 +18,7 @@ function clickHandler(event) {
     validateForm(event);
   }
   if (event.target.closest(".start-timer-button")) {
-    currentActivity.singleRunValidation();
+    currentActivity.noMultipleStarts();
   }
 }
 
@@ -114,7 +114,7 @@ function checkTimeInputs(time) {
 
 function errorMessage(msg) {
   return `<img src="./assets/warning.svg" class="warning-icon">
-  A ${msg} is required.`;
+        A ${msg} is required.`;
 }
 
 function removeError(error, input) {
