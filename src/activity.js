@@ -6,6 +6,7 @@ class Activity {
     this.seconds = parseInt(seconds);
     this.id = Date.now();
     this.completed = false;
+    this.timeCardMin = minutes;
   }
 
   startTimer() {
@@ -17,7 +18,7 @@ class Activity {
       currentActivity.seconds--;
       if (currentActivity.minutes <= 0 && currentActivity.seconds === -1) {
         clearInterval(counting);
-        alert("Time's up! Activity complete.");
+        currentActivity.markComplete();
       } else if (currentActivity.seconds === -1) {
         currentActivity.seconds = 59;
         currentActivity.minutes--;
@@ -33,11 +34,13 @@ class Activity {
 
   markComplete() {
     this.completed = true;
-    clearInterval(counting);
-    alert("Time's up! Activity complete.");
+    var countdown = document.getElementById("timer");
+    document.querySelector(".start-timer-button").innerText = "COMPLETE!";
+    countdown.classList.add("complete");
+    countdown.innerText = "Mission accomplished!";
   }
 
   saveToStorage() {
-    
+
   }
 }
