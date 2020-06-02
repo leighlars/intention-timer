@@ -30,20 +30,20 @@
               Exercise
             </button>
           </div>
-          <span class="activity-error error"></span>
+          <span class="activity-error error-text"></span>
           <label for="description">What would you like to accomplish during this time?</label>
           <input type="text" class="inputs" id="description-text" maxlength="50" minlength="0">
-          <span class="goal-error error"></span>
+          <span class="goal-error error-text"></span>
           <div class="time-box">
             <div class="minutes-box">
               <label for="minutes" name="time-label">Minutes</label>
               <input type="number" class="inputs" id="minute-value" max="99" min="0">
-              <span class="min-error error"></span>
+              <span class="min-error error-text"></span>
             </div>
             <div class="seconds-box">
               <label for="seconds" name="time-label">Seconds</label>
               <input type="number" class="inputs" id="seconds-value" max="59" min="0">
-              <span class="seconds-error error"></span>
+              <span class="seconds-error error-text"></span>
             </div>
           </div>
           <button class="start-activity-button">START ACTIVITY</button>
@@ -53,7 +53,7 @@
         <h2 class="current-activity-header">Current Activities</h2>
         <div class="timer-section">
           <h3 class="user-description">User Goal input text Here</h3>
-          <p id="timer">10:00</p>
+          <p id="timer"></p>
           <button class="start-timer-button">START</button>
         </div>
       </section>
