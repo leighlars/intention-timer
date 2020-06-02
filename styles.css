@@ -183,8 +183,8 @@ form,
   margin-left: 75%;
   margin-bottom: 10px;
   text-align: center;
-  height: 30px;
-  width: 170px;
+  height: 3em;
+  width: 9em;
 }
 
 .timer-section {
@@ -204,23 +204,23 @@ form,
 .start-timer-button {
   border-radius: 50%;
   background: transparent;
+  border: 3px solid #B3FD78;
   font-size: 4vh;
   height: 300px;
   width: 300px;
 }
 
 .start-timer-button.study{
-  border: 2px solid #B3FD78;
+  border: 3px solid #B3FD78;
 }
 
 .start-timer-button.meditate {
-  border: 2px solid #C278FD;
+  border: 3px solid #C278FD;
 }
 
 .start-timer-button.exercise {
-    border: 2px solid #FD8078;
+    border: 3px solid #FD8078;
 }
-
 
 @media only screen and (max-width: 600px) {
   main {

@@ -9,15 +9,21 @@ function clickHandler(event) {
     event.preventDefault();
     var button = event.target.closest(".activity-button");
     var btnIcon = button.querySelector("img");
-    disableCategoryButtons(button);
-    activateButton(button);
+    var startTimerButton = document.querySelector(".start-timer-button");
+    disableCategoryButtons(startTimerButton);
+    activateButton(button, startTimerButton);
   }
   if (event.target.closest(".start-activity-button")) {
     validateForm(event);
   }
+  if (event.target.closest(".start-timer-button")) {
+    debugger;
+    currentActivity.startTimer();
+  }
 }
 
-function activateButton(button) {
+function activateButton(button, startTimerButton) {
+  // var startTimerButton = document.querySelector(".start-timer-button");
   button.classList.add("active");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}-active.svg`;
@@ -25,18 +31,19 @@ function activateButton(button) {
   document.querySelector(".start-timer-button").classList.add(`${btnIcon.id}`);
 }
 
-function deactivateButton(button) {
+function deactivateButton(button, startTimerButton) {
   button.classList.remove("active");
+  startTimerButton.classList.remove("study", "meditate", "exercise");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}.svg`;
   form.classList.remove(`${btnIcon.id}`);
   document.querySelector(".start-timer-button").classList.remove(`${btnIcon.id}`);
 }
 
-function disableCategoryButtons() {
+function disableCategoryButtons(startTimerButton) {
   var allCategoryButtons = form.querySelectorAll(".activity-button");
   for (var i = 0; i < allCategoryButtons.length; i++) {
-    deactivateButton(allCategoryButtons[i]);
+    deactivateButton(allCategoryButtons[i], startTimerButton);
   }
 }
 
