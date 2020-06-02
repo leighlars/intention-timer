@@ -19,6 +19,10 @@ function clickHandler(event) {
   if (event.target.closest(".start-activity-button")) {
     canSubmit(event);
   }
+  if (event.target.closest(".start-timer-button")) {
+    debugger;
+    currentActivity.startTimer();
+  }
 }
 
 function activateButton(button) {
@@ -27,7 +31,6 @@ function activateButton(button) {
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}-active.svg`;
   form.classList.add(`${btnIcon.id}`);
-  // startTimerButton.style["border-color"] = button.style["border-color"];
   button.classList.contains("study-button") ? startTimerButton.style["border-color"] =  "#B3FD78" :
   button.classList.contains("meditate-button") ? startTimerButton.style["border-color"] = "#C278FD" :
   startTimerButton.style["border-color"] = "#FD8078";
