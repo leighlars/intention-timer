@@ -32,12 +32,14 @@ class Activity {
   }
 
   markComplete() {
-    this.completed = true;
+    if (this.completed = true) {
     clearInterval(counting);
     alert("Time's up! Activity complete.");
+    }
+    return (document.querySelector(".log-activity-section").classList.remove(".hidden"));
   }
 
   saveToStorage() {
-    
+
   }
 }

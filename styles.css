@@ -228,6 +228,21 @@ form,
     border: 3px solid #FD8078;
 }
 
+.log-activity-section {
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1% 5%;
+}
+.log-activity-button {
+  border-radius: 4px;
+  color: #46424D;
+  margin-left: 75%;
+  margin-bottom: 10px;
+  text-align: center;
+  height: 3em;
+  width: 9em;
+}
+
 @media only screen and (max-width: 600px) {
   main {
     display: flex;
