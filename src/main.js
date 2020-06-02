@@ -90,7 +90,6 @@ function checkMinuteInput() {
 function checkSecondsInput() {
   var secondsInput = document.querySelector("#seconds-value");
   if (checkTimeInputs(secondsInput)) {
-    console.log("hello");
     var secondsError = document.querySelector(".seconds-error");
     secondsError.innerHTML = errorMessage("number between 0-59");
     setTimeout(removeError, 2000, secondsError, secondsInput);
@@ -103,6 +102,7 @@ function checkTimeInputs(time) {
   if (typeof Number(time.value) != "number" || time.value === "" || time.value >= 60) {
     hasError = true;
     time.classList.add("error");
+    return true;
   }
 }
 
@@ -133,9 +133,4 @@ function submit(category, goal, minutes, seconds) {
   } else {
     hasError = false;
   }
-  // if (hasError) {
-  // }
 }
-
-// function showTimerPage(category, goal, minutes, seconds) {
-// }
