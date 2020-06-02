@@ -1,8 +1,9 @@
+var main = document.querySelector("main");
 var form = document.querySelector("form");
 var pastActivities = [];
 var currentActivity;
 
-form.addEventListener("click", clickHandler);
+main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
   if (event.target.closest(".activity-button")) {
@@ -17,13 +18,11 @@ function clickHandler(event) {
     validateForm(event);
   }
   if (event.target.closest(".start-timer-button")) {
-    debugger;
-    currentActivity.startTimer();
+    currentActivity.singleRunValidation();
   }
 }
 
 function activateButton(button, startTimerButton) {
-  // var startTimerButton = document.querySelector(".start-timer-button");
   button.classList.add("active");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}-active.svg`;

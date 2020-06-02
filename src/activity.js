@@ -9,12 +9,12 @@ class Activity {
   }
 
   startTimer() {
+    this.started = true;
     var countdownEL = document.getElementById("timer");
-    // debugger;
     var counting = setInterval(function() {
-      countdownEL.innerText = `${currentActivity.minutes}:${currentActivity.seconds}`;
+      countdownEL.innerText = `${currentActivity.minutes}:${currentActivity.seconds < 10 ? "0" + currentActivity.seconds : currentActivity.seconds}`;
       currentActivity.seconds--;
-      if (currentActivity.minutes === 0 && currentActivity.seconds === -1) {
+      if (currentActivity.minutes <= 0 && currentActivity.seconds <= -1) {
         clearInterval(counting);
         alert("Congratulations!");
       }
@@ -23,6 +23,12 @@ class Activity {
         currentActivity.minutes--;
       }
     }, 1000);
+  }
+
+  singleRunValidation() {
+    if (!currentActivity.started) {
+      currentActivity.startTimer();
+    }
   }
 
   markComplete() {
