@@ -13,8 +13,9 @@ function clickHandler(event) {
     event.preventDefault();
     var button = event.target.closest(".activity-button");
     var btnIcon = button.querySelector("img");
-    disableCategoryButtons(button);
-    activateButton(button);
+    var startTimerButton = document.querySelector(".start-timer-button");
+    disableCategoryButtons(startTimerButton);
+    activateButton(button, startTimerButton);
   }
   if (event.target.closest(".start-activity-button")) {
     canSubmit(event);
@@ -25,28 +26,29 @@ function clickHandler(event) {
   }
 }
 
-function activateButton(button) {
-  var startTimerButton = document.querySelector(".start-timer-button");
+function activateButton(button, startTimerButton) {
+  // var startTimerButton = document.querySelector(".start-timer-button");
   button.classList.add("active");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}-active.svg`;
   form.classList.add(`${btnIcon.id}`);
-  button.classList.contains("study-button") ? startTimerButton.style["border-color"] =  "#B3FD78" :
-  button.classList.contains("meditate-button") ? startTimerButton.style["border-color"] = "#C278FD" :
-  startTimerButton.style["border-color"] = "#FD8078";
+  button.classList.contains("study-button") ? startTimerButton.classList.add("study") :
+  button.classList.contains("meditate-button") ? startTimerButton.classList.add("meditate") :
+  startTimerButton.classList.add("exercise");
 }
 
-function deactivateButton(button) {
+function deactivateButton(button, startTimerButton) {
   button.classList.remove("active");
+  startTimerButton.classList.remove("study", "meditate", "exercise");
   var btnIcon = button.querySelector("img");
   btnIcon.src = `./assets/${btnIcon.id}.svg`;
   form.classList.remove(`${btnIcon.id}`);
 }
 
-function disableCategoryButtons() {
+function disableCategoryButtons(startTimerButton) {
   var allCategoryButtons = form.querySelectorAll(".activity-button");
   for (var i = 0; i < allCategoryButtons.length; i++) {
-    deactivateButton(allCategoryButtons[i]);
+    deactivateButton(allCategoryButtons[i], startTimerButton);
   }
 }
 
