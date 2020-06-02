@@ -111,7 +111,7 @@ form,
   border-radius: 4px;
   color: #FFF;
   font-size: 1.25em;
-  height: 60%;
+  height: 75px;
   width: 25%;
 }
 
@@ -193,6 +193,10 @@ form,
   padding: 1% 5%;
 }
 
+.user-description {
+  font-size: 30px;
+}
+
 #timer {
   color: #FFF;
   font-weight: bolder;
@@ -206,8 +210,8 @@ form,
   background: transparent;
   border: 3px solid #B3FD78;
   font-size: 4vh;
-  height: 300px;
-  width: 300px;
+  height: 275px;
+  width: 275px;
 }
 
 .start-timer-button.study{
@@ -231,7 +235,7 @@ form,
 
   .new-activities-view,
   .timer-view {
-    height: 100vh;
+    height: 600px;
     width: 100%;
   }
 
