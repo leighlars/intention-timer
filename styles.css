@@ -52,6 +52,10 @@ section {
   width: 70%;
 }
 
+button {
+  outline:none;
+}
+
 button:hover {
   outline: none;
   transform: translateY(-5px);
@@ -200,11 +204,23 @@ form,
 .start-timer-button {
   border-radius: 50%;
   background: transparent;
-  border: 2px solid #B3FD78;
   font-size: 4vh;
   height: 300px;
   width: 300px;
 }
+
+.start-timer-button.study{
+  border: 2px solid #B3FD78;
+}
+
+.start-timer-button.meditate {
+  border: 2px solid #C278FD;
+}
+
+.start-timer-button.exercise {
+    border: 2px solid #FD8078;
+}
+
 
 @media only screen and (max-width: 600px) {
   main {
