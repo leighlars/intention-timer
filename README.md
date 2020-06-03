@@ -51,17 +51,17 @@ Our estimated schedule is as follows:
 
 **Functionality Showcase**
 
-New activity view through to log activity.
+### New activity view through to log activity. 
 ![video of New Activity view through to log activity](https://media.giphy.com/media/kdRlyL785BKGA9HoMF/giphy.gif)
 
-Start timer and watch decreasing seconds.
+### Start timer and watch decreasing seconds.
 ![video of the seconds counting down](https://media.giphy.com/media/jtXBUY0MLe7TqyLcjD/giphy.gif)
 
-Partial form submission event.
+### Partial form submission event.
 ![video of a partial form submission event](https://media.giphy.com/media/VEUw2ydXV20rP3znTA/giphy.gif)
 
-Blank form submission event.
+### Blank form submission event.
 ![Video of blank form submission event](https://media.giphy.com/media/StLm9xRCY6NrUuEV6z/giphy.gif)
 
-Past Activity cards in local storage.
+### Past Activity cards in local storage.
 ![Video of past activities cards stored in local storage](https://media.giphy.com/media/dt1BB5JP3F0iCnIfbV/giphy.gif)
