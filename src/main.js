@@ -2,7 +2,7 @@ var main = document.querySelector("main");
 var pastActivities = [];
 var currentActivity;
 
-// window.onload = retrieveStoredActivities();
+window.onload = retrieveStoredActivities();
 main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
@@ -21,7 +21,8 @@ function clickHandler(event) {
   }
   if (event.target.classList.contains("log-activity-button")) {
     logActivity();
-  } if (event.target.classList.contains("create-activity-button")) {
+  }
+  if (event.target.classList.contains("create-activity-button")) {
     createNewActivity();
   }
 }
@@ -39,9 +40,9 @@ function disableCategoryButtons() {
     allCategoryButtons[i].classList.remove("active");
     var buttonIcon = allCategoryButtons[i].querySelector("img");
     buttonIcon.src = `./assets/${buttonIcon.id}.svg`;
+    main.classList.remove(`${buttonIcon.id}`);
+    document.querySelector(".start-timer-button").classList.remove(`${buttonIcon.id}`);
   }
-  main.classList.remove(`${buttonIcon.id}`);
-  document.querySelector(".start-timer-button").classList.remove(`${buttonIcon.id}`);
 }
 
 function validateForm(event) {
@@ -49,8 +50,8 @@ function validateForm(event) {
   var hasError;
   var category = checkCategories();
   var goal = checkGoal();
-  var minutes = checkMinuteInput();
-  var seconds = checkSecondsInput();
+  var minutes = checkTimeInput("minute");
+  var seconds = checkTimeInput("seconds");
   submit(category, goal, minutes, seconds);
 }
 
@@ -77,7 +78,7 @@ function checkGoal() {
   return goalInput.value;
 }
 
-function checkTimeInputs(time) {
+function timeValidation(time) {
   if (typeof Number(time.value) != "number" || time.value === "" || time.value >= 60) {
     hasError = true;
     time.classList.add("error");
@@ -85,30 +86,26 @@ function checkTimeInputs(time) {
   }
 }
 
-function checkMinuteInput() {
-  var minuteInput = document.querySelector("#minute-value");
-  if (checkTimeInputs(minuteInput)) {
-    renderError(document.querySelector(".min-error"), "number", minuteInput);
-    return;
+function checkTimeInput(timeType) {
+  eval(
+    `  var ${timeType}Input = document.querySelector("#${timeType}-value");
+       if (timeValidation(${timeType}Input)) {
+         renderError(document.querySelector(".${timeType}-error"), "number between 0-59", ${timeType}Input);
+        var timeValue;
+      }
+      var timeValue = ${timeType}Input.value;`
+    )
+  if (timeValue) {
+    return timeValue;
   }
-  return minuteInput.value;
 }
 
-function checkSecondsInput() {
-  var secondsInput = document.querySelector("#seconds-value");
-  if (checkTimeInputs(secondsInput)) {
-    renderError(document.querySelector(".seconds-error"), "number between 0-59", secondsInput);
-    return;
-  }
-  return secondsInput.value;
-}
-
-function renderError(errorLocation, errorMessage, inputField) {
-  errorLocation.innerHTML = errorMessage(errorMessage);
+function renderError(errorLocation, errorDescription, inputField) {
+  errorLocation.innerHTML = errorMessage(errorDescription);
   setTimeout(removeError, 2000, errorLocation, inputField);
 }
 
-function errorMessage(errorMessage) {
+function errorMessage(errorDescription) {
   return `<img src="./assets/warning.svg" class="warning-icon">
         A ${errorDescription} is required.`;
 }
@@ -137,12 +134,26 @@ function submit(category, goal, minutes, seconds) {
   if (!hasError) {
     currentActivity = new Activity(category, goal, minutes, seconds);
     pastActivities.push(currentActivity);
-    document.getElementById("timer").innerHTML = `${minutes}:${seconds}`;
     hideElement("new-activities-view");
     displayElement("timer-view");
+    document.getElementById("timer").innerHTML = `${minutes}:${seconds}`;
   } else {
     hasError = false;
   }
+}
+
+function render(buttonText, timerText) {
+  document.querySelector(".start-timer-button").innerText = buttonText;
+  document.getElementById("timer").innerText = timerText;
+}
+
+function renderTimer() {
+  render("In Progress", `${currentActivity.minutes}:${currentActivity.seconds < 10 ? "0" + currentActivity.seconds : currentActivity.seconds}`);
+}
+
+function renderComplete() {
+  render("COMPLETE!", "Mission accomplished!");
+  document.getElementById("timer").classList.add("complete");
 }
 
 function logActivity() {
@@ -150,17 +161,7 @@ function logActivity() {
   hideElement("timer-view");
   hideElement("no-activities-message");
   displayActivityCards();
-  // currentActivity.saveToStorage(pastActivities);
-}
-
-function createNewActivity() {
-  hideElement("completed-view");
-  displayElement("new-activities-view");
-  hideElement("log-activity-button");
-  document.querySelector(".start-timer-button").innerText = "START";
-  document.querySelector("form").reset();
-  main.querySelector(".active").classList.remove("active");
-  disableCategoryButtons();
+  currentActivity.saveToStorage(pastActivities);
 }
 
 function displayActivityCards() {
@@ -168,19 +169,28 @@ function displayActivityCards() {
   for (var i = 0; i < pastActivities.length; i++) {
     var pastCard = `
     <div class="card" id="${pastActivities[i].id}">
-      <p class="card-cat">${pastActivities[i].category}</p>
-      <p class="card-min">${pastActivities[i].timeCardMin} MIN</p> </br>
-      <p class="card-desc">${pastActivities[i].description}</p>
-    </div>
-    `;
+    <p class="card-cat">${pastActivities[i].category.charAt(0).toUpperCase() + pastActivities[i].category.slice(1)}</p>
+    <p class="card-min">${pastActivities[i].timeCardMin} MIN</p> </br>
+    <p class="card-desc">${pastActivities[i].description}</p>
+    </div>`;
     document.querySelector('.card-section').insertAdjacentHTML("afterbegin", pastCard);
   }
 }
 
-// function retrieveStoredActivities() {
-//   pastActivities = JSON.parse(localStorage.getItem("storedActivities")) || [];
-//   for (var i = 0; i < savedCards.length; i++) {
-//     pastActivities[i] = new Idea(pastActivities[i].category, pastActivities[i].description, pastActivities[i].minutes, pastActivities[i].seconds);
-//   }
-//   // displayCards();
-// }
+function createNewActivity() {
+  hideElement("completed-view");
+  hideElement("log-activity-button");
+  displayElement("new-activities-view");
+  document.querySelector(".start-timer-button").innerText = "START";
+  document.querySelector("form").reset();
+  main.querySelector(".active").classList.remove("active");
+  disableCategoryButtons();
+}
+
+function retrieveStoredActivities() {
+  pastActivities = JSON.parse(localStorage.getItem("storedActivities")) || [];
+  for (var i = 0; i < pastActivities.length; i++) {
+    pastActivities[i] = new Activity(pastActivities[i].category, pastActivities[i].description, pastActivities[i].minutes, pastActivities[i].seconds);
+  }
+  displayActivityCards();
+}
