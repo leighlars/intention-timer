@@ -145,6 +145,17 @@ function submit(category, goal, minutes, seconds) {
 function logActivity() {
   document.querySelector(".completed-view").classList.remove("hidden");
   document.querySelector(".timer-view").classList.add("hidden");
+  document.querySelector(".no-activities-message").outerText = "";
+  createActivityCard(currentActivity);
+}
+
+function createActivityCard(activity) {
+  document.querySelector('.new-cards').innerHTML += `
+  <article class="card ${activity.category}-card" id="${activity.id}">
+    ${activity.description.toUpperCase()} <br>
+    ${activity.timeCardMin} MIN
+  </article>
+  `;
 }
 
 function createNewActivity() {
