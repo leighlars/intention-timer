@@ -50,7 +50,7 @@ class Activity {
     document.getElementById("timer").classList.add("complete");
   }
 
-  saveToStorage() {
-
-  }
+ //  saveToStorage(pastActivities) {
+ //   localStorage.setItem("storedActivities", JSON.stringify(pastActivities));
+ // }
 }
