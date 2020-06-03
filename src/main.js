@@ -145,12 +145,22 @@ function submit(category, goal, minutes, seconds) {
 function logActivity() {
   document.querySelector(".completed-view").classList.remove("hidden");
   document.querySelector(".timer-view").classList.add("hidden");
+  document.querySelector(".no-activities-message").outerText = "";
+  createActivityCard(currentActivity);
+}
+
+function createActivityCard(activity) {
+  document.querySelector('.new-cards').innerHTML += `
+  <article class="card ${activity.category}-card" id="${activity.id}">
+    ${activity.description.toUpperCase()} <br>
+    ${activity.timeCardMin} MIN
+  </article>
+  `;
 }
 
 function createNewActivity() {
   document.querySelector(".completed-view").classList.add("hidden");
   document.querySelector(".new-activities-view").classList.remove("hidden");
   form.reset();
-  form.querySelector(".active").classList.remove("active");
-  // form.classList.value = ""; change icon color to white
+  deactivateButton(document.querySelector(`.${currentActivity.category}-button`, document.querySelector(".start-timer-button")));
 }
