@@ -219,6 +219,10 @@ form,
   margin-bottom: 10px;
 }
 
+#timer.complete {
+  font-size: 28px;
+}
+
 .start-timer-button {
   border-radius: 50%;
   background: transparent;
@@ -324,6 +328,10 @@ form,
     height: 100%;
   }
 
+  article {
+    margin-top: 25px;
+  }
+
   .new-activities-view,
   .timer-view,
   .completed-view {
@@ -358,8 +366,4 @@ form,
     border-top: 3px solid #46424D;
     width: 100%;
   }
-}
-
-#timer.complete {
-  font-size: 28px;
 }
