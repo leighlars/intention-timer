@@ -21,7 +21,7 @@ For our mod 1 group project, we will build an application that allows the user t
 We will develop our skills and understanding in semantic HTML, clean and organized CSS styles, DRY and organized JS, DOM manipulation, event bubbling/delegation, and persisting data over refreshes using local storage.
 
 Our estimated schedule is as follows:
-- **5/26-27/2020** Construct semantic HTML & organized CSS that incorporates smooth, responsive design. Set up Activity class with properties and methods. Team collab style: divide / conquer.
+- **5/26-27/2020** Construct semantic HTML & organized CSS that incorporates smooth, responsive design. Set up Activity class with properties and methods. Team collaboration style: divide / conquer.
 - **5/27-28/2020** Construct form functionality using DOM manipulation and JS interactivity.
 - **5/29/30/2020** Construct timer functionality with alert and displayed timer.
 - **5/31-6/1/2020** Log and display past activities in sidebar.
