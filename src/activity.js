@@ -16,8 +16,10 @@ class Activity {
       document.querySelector(".start-timer-button").innerText = "In Progress";
       currentActivity.seconds--;
       if (currentActivity.minutes <= 0 && currentActivity.seconds === -1) {
+        // this.completed = true;
+        // var completionStatus = this.completed;
         clearInterval(counting);
-        alert("Time's up! Activity complete.");
+        currentActivity.markComplete();
       } else if (currentActivity.seconds === -1) {
         currentActivity.seconds = 59;
         currentActivity.minutes--;
@@ -31,12 +33,12 @@ class Activity {
     }
   }
 
-  markComplete() {
-    if (this.completed = true) {
-    clearInterval(counting);
-    alert("Time's up! Activity complete.");
-    }
-    return (document.querySelector(".log-activity-section").classList.remove(".hidden"));
+  markComplete(completionStatus) {
+    this.completed = true;
+    var completionStatus = this.completed;
+    if (completionStatus) {
+        logActivity();
+      }
   }
 
   saveToStorage() {
