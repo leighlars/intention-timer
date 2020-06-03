@@ -87,6 +87,7 @@ form,
   color: #FFF;
   margin: 1% auto;
   padding: 2% 10%;
+  min-height: 530px;
   height: 80%;
   width: 94%;
 }
