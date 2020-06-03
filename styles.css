@@ -96,6 +96,10 @@ form,
   display: none;
 }
 
+.page-header {
+  color: #FFF;
+}
+
 .button-options {
   display: flex;
   flex-direction: row;
