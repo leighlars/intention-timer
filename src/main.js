@@ -136,7 +136,7 @@ function submit(category, goal, minutes, seconds) {
     pastActivities.push(currentActivity);
     hideElement("new-activities-view");
     displayElement("timer-view");
-    document.getElementById("timer").innerHTML = `${minutes}:${seconds}`;
+    document.getElementById("timer").innerHTML = `${minutes}:${parseInt(seconds) < 10 ? "0" + seconds : seconds}`;
   } else {
     hasError = false;
   }
