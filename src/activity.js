@@ -17,6 +17,8 @@ class Activity {
       currentActivity.renderTimer();
       currentActivity.seconds--;
       if (currentActivity.minutes <= 0 && currentActivity.seconds === -1) {
+        // this.completed = true;
+        // var completionStatus = this.completed;
         clearInterval(counting);
         currentActivity.markComplete();
       } else if (currentActivity.seconds === -1) {
@@ -34,9 +36,10 @@ class Activity {
 
   markComplete() {
     this.completed = true;
+    logActivity();
     currentActivity.renderComplete();
   }
-  //
+  
   renderComplete() {
     this.render("COMPLETE!", "Mission accomplished!");
     document.getElementById("timer").classList.add("complete");

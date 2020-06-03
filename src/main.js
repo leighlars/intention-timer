@@ -140,3 +140,7 @@ function submit(category, goal, minutes, seconds) {
     hasError = false;
   }
 }
+
+function logActivity() {
+  document.querySelector(".log-activity-section").classList.remove("hidden");
+}
