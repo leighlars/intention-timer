@@ -166,6 +166,9 @@ function logActivity() {
 
 function displayActivityCards() {
   document.querySelector('.card-section').innerHTML = "";
+  if (pastActivities.length > 0) {
+    hideElement("no-activities-message");
+  }
   for (var i = 0; i < pastActivities.length; i++) {
     var pastCard = `
     <div class="individual-card">
