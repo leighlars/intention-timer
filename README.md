@@ -39,3 +39,5 @@ Our estimated schedule is as follows:
 ![image of mobile view](/readme-images/mobile-view.png)
 
 5/29: We began to write the functionality to instantiate the activity class, and add the activity to data model. We crafted form validation: if the fields are empty or activity is not selected, or if the minutes/ seconds input is not a number, or if the description is longer than 50 characters, the user fulfill the requirements to start the activity and move on to the next page. The activity selected displays the appropriately covered icon, text and border as given in the spec.
+
+6/1: We finished programming the start activity functionality which allows the changing of views to reveal the timer upon form validation. Checked that our error messages displayed in the correct locations and with the correct text, without losing the users inputs,  if the form was partially completed before submission.
