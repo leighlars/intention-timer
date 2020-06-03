@@ -12,7 +12,7 @@ class Activity {
   startTimer() {
     this.started = true;
     var counting = setInterval(function() {
-      currentActivity.renderTimer();
+      renderTimer();
       currentActivity.seconds--;
       if (currentActivity.minutes <= 0 && currentActivity.seconds === -1) {
         clearInterval(counting);
@@ -32,25 +32,11 @@ class Activity {
 
   markComplete() {
     this.completed = true;
-    document.querySelector(".log-activity-button").classList.remove("hidden");
-    currentActivity.renderComplete();
+    displayElement("log-activity-button");
+    renderComplete();
   }
 
-  render(buttonText, timerText) {
-    document.getElementById("timer").innerText = timerText;
-    document.querySelector(".start-timer-button").innerText = buttonText;
-  }
-
-  renderTimer() {
-    this.render("In Progress", `${currentActivity.minutes}:${currentActivity.seconds < 10 ? "0" + currentActivity.seconds : currentActivity.seconds}`);
-  }
-
-  renderComplete() {
-    this.render("COMPLETE!", "Mission accomplished!");
-    document.getElementById("timer").classList.add("complete");
-  }
-
- //  saveToStorage(pastActivities) {
- //   localStorage.setItem("storedActivities", JSON.stringify(pastActivities));
- // }
+  saveToStorage(pastActivities) {
+   localStorage.setItem("storedActivities", JSON.stringify(pastActivities));
+ }
 }
