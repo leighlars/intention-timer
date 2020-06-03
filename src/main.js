@@ -1,9 +1,9 @@
-var main = document.querySelector("main");
+document.querySelector("main");
 var form = document.querySelector("form");
 var pastActivities = [];
 var currentActivity;
 
-main.addEventListener("click", clickHandler);
+document.querySelector("main").addEventListener("click", clickHandler);
 
 function clickHandler(event) {
   if (event.target.closest(".activity-button")) {
