@@ -35,7 +35,10 @@ Our estimated schedule is as follows:
 
 5/28: We completed the HTML/CSS for the page and for the responsive media query in respect to the rubric and given colors.  We added a hover float effect to the buttons.
 
+**Image of Desktop View**
 ![image of desktop view](/readme-images/desktop-view.png)
+
+**Image of Mobile View**
 ![image of mobile view](/readme-images/mobile-view.png)
 
 5/29: We began to write the functionality to instantiate the activity class, and add the activity to data model. We crafted form validation: if the fields are empty or activity is not selected, or if the minutes/ seconds input is not a number, or if the description is longer than 50 characters, the user fulfill the requirements to start the activity and move on to the next page. The activity selected displays the appropriately covered icon, text and border as given in the spec.
@@ -45,3 +48,20 @@ Our estimated schedule is as follows:
 6/2: Refactored and polished code. Ensured that the start timer start button functionality does initiate the timer countdown. The timer does show time decreasing by second. Created the temporary alert that pops up when the timer completes, informing the user.
 
 6/3: Started the day with fixing several bugs and tweaking elements of our design. We removed the temporary alert when the timer function finished and we added "mission accomplished!" as our congratulatory message. We took a team vote and agreed that the word "start" displaying on the decrementing timer was confusing. We updated the start buttons innerText to "In progress" once the timer is initiated. Created the “Log Activity” button and built the functionality for it to render a past activity “card” in the past activity view. We also were able to persist these activity cards into local storage in today's schedule.
+
+**Functionality Showcase**
+
+New activity view through to log activity.
+![video of New Activity view through to log activity](https://media.giphy.com/media/kdRlyL785BKGA9HoMF/giphy.gif)
+
+Start timer and watch decreasing seconds.
+![video of the seconds counting down](https://media.giphy.com/media/jtXBUY0MLe7TqyLcjD/giphy.gif)
+
+Partial form submission event.
+![video of a partial form submission event](https://media.giphy.com/media/VEUw2ydXV20rP3znTA/giphy.gif)
+
+Blank form submission event.
+![Video of blank form submission event](https://media.giphy.com/media/StLm9xRCY6NrUuEV6z/giphy.gif)
+
+Past Activity cards in local storage.
+![Video of past activities cards stored in local storage](https://media.giphy.com/media/dt1BB5JP3F0iCnIfbV/giphy.gif)
