@@ -147,6 +147,8 @@ function submit(category, goal, minutes, seconds) {
 function logActivity() {
   displayElement("completed-view");
   hideElement("timer-view");
+  document.querySelector(".no-activities-message").outerText = "";
+  createActivityCard(currentActivity);
 }
 
 function createNewActivity() {
@@ -154,5 +156,15 @@ function createNewActivity() {
   displayElement("new-activities-view");
   document.querySelector("form").reset();
   main.querySelector(".active").classList.remove("active");
-
+  deactivateButton(document.querySelector(`.${currentActivity.catego
 }
+
+function createActivityCard(activity) {
+  document.querySelector('.new-cards').innerHTML += `
+  <article class="card ${activity.category}-card" id="${activity.id}">
+    ${activity.description.toUpperCase()} <br>
+    ${activity.timeCardMin} MIN
+  </article>
+  `;
+}
+
