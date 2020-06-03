@@ -1,8 +1,8 @@
-var form = document.querySelector("form");
+var main = document.querySelector("main");
 var pastActivities = [];
 var currentActivity;
 
-document.querySelector("main").addEventListener("click", clickHandler);
+main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
   if (event.target.closest(".activity-button")) {
@@ -62,8 +62,9 @@ function validateForm(event) {
 function checkCategories() {
   if (!form.querySelector(".active")) {
     hasError = true;
-    var categoryError = document.querySelector(".activity-error");
-    renderError(categoryError, "activity");
+    var categoryError = document.querySelector(".activity-error")
+    categoryError.innerHTML = errorMessage("activity");
+    setTimeout(removeError, 2000, categoryError);
   } else {
     hasError = false;
     return form.classList.value;
@@ -75,7 +76,9 @@ function checkGoal() {
   if (goalInput.value.length === 0) {
     hasError = true;
     goalInput.classList.add("error");
-    renderError(document.querySelector(".goal-error"), "description", goalInput);
+    var goalError = document.querySelector(".goal-error");
+    goalError.innerHTML = errorMessage("description");
+    setTimeout(removeError, 2000, goalError, goalInput);
     return;
   }
   document.querySelector(".user-description").innerText = goalInput.value;
@@ -85,7 +88,9 @@ function checkGoal() {
 function checkMinuteInput() {
   var minuteInput = document.querySelector("#minute-value");
   if (checkTimeInputs(minuteInput)) {
-    renderError(document.querySelector(".min-error"), "number", minuteInput);
+    var minError = document.querySelector(".min-error");
+    minError.innerHTML = errorMessage("number");
+    setTimeout(removeError, 2000, minError, minuteInput);
     return;
   }
   return minuteInput.value;
@@ -94,7 +99,9 @@ function checkMinuteInput() {
 function checkSecondsInput() {
   var secondsInput = document.querySelector("#seconds-value");
   if (checkTimeInputs(secondsInput)) {
-    renderError(document.querySelector(".seconds-error"), "number between 0-59", secondsInput);
+    var secondsError = document.querySelector(".seconds-error");
+    secondsError.innerHTML = errorMessage("number between 0-59");
+    setTimeout(removeError, 2000, secondsError, secondsInput);
     return;
   }
   return secondsInput.value;
@@ -106,11 +113,6 @@ function checkTimeInputs(time) {
     time.classList.add("error");
     return true;
   }
-}
-
-function renderError(errorLocation, errorDescription, inputField) {
-  errorLocation.innerHTML = errorMessage(errorDescription);
-  setTimeout(removeError, 2000, errorLocation, inputField);
 }
 
 function errorMessage(msg) {
@@ -151,6 +153,5 @@ function createNewActivity() {
   document.querySelector(".completed-view").classList.add("hidden");
   document.querySelector(".new-activities-view").classList.remove("hidden");
   form.reset();
-  form.querySelector(".active").classList.remove("active");
-  // form.classList.value = ""; change icon color to white
+  form.querySelector("active").classList.remove("active");
 }
