@@ -247,36 +247,71 @@ form,
 }
 
 .card-section {
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
   margin-left: 30px;
+  overflow: scroll;
   height: 80%;
   width: 90%;
 }
 
-.card {
+.individual-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background: #46424D;
   border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 8px;
-  padding-left: 10px;
+  box-shadow: 5px 10px #26222D;
   height: 75px;
-  width: 325px;
+  width: 95%;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 100%;
+  width: 90%;
 }
 
 .card-cat,
 .card-min,
 .card-desc {
   color: #FFF;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
 }
 
 .card-cat {
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: bold;
 }
 
+.card-desc {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.category-indicator {
+  background: #FFF;
+  border: none;
+  border-radius: 2px;
+  margin-top: 12px;
+  margin-right: 12px;
+  height: 20px;
+  width: 3px;
+}
+
+.category-indicator.study {
+  background: #B3FD78;
+}
+
+.category-indicator.meditate {
+  background: #C278FD;
+}
+
+.category-indicator.exercise {
+  background: #FD8078;
+}
 
 @media only screen and (max-width: 600px) {
   main {

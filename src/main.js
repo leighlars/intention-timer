@@ -2,7 +2,7 @@ var main = document.querySelector("main");
 var pastActivities = [];
 var currentActivity;
 
-window.onload = retrieveStoredActivities();
+// window.onload = retrieveStoredActivities();
 main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
@@ -168,11 +168,15 @@ function displayActivityCards() {
   document.querySelector('.card-section').innerHTML = "";
   for (var i = 0; i < pastActivities.length; i++) {
     var pastCard = `
-    <div class="card" id="${pastActivities[i].id}">
-    <p class="card-cat">${pastActivities[i].category.charAt(0).toUpperCase() + pastActivities[i].category.slice(1)}</p>
-    <p class="card-min">${pastActivities[i].timeCardMin} MIN</p> </br>
-    <p class="card-desc">${pastActivities[i].description}</p>
-    </div>`;
+    <div class="individual-card">
+      <span class="card-text" id="${pastActivities[i].id}">
+        <p class="card-cat">${pastActivities[i].category.charAt(0).toUpperCase() + pastActivities[i].category.slice(1)}</p>
+        <p class="card-min">${pastActivities[i].timeCardMin} MIN</p> </br>
+        <p class="card-desc">${pastActivities[i].description}</p>
+      </span>
+      <div class="category-indicator"></div>
+    </div>
+    `;
     document.querySelector('.card-section').insertAdjacentHTML("afterbegin", pastCard);
   }
 }
