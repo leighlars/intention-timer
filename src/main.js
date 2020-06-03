@@ -2,6 +2,7 @@ var main = document.querySelector("main");
 var pastActivities = [];
 var currentActivity;
 
+// window.onload = retrieveStoredActivities();
 main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
@@ -102,12 +103,12 @@ function checkSecondsInput() {
   return secondsInput.value;
 }
 
-function renderError(errorLocation, errorDescription, inputField) {
-  errorLocation.innerHTML = errorMessage(errorDescription);
+function renderError(errorLocation, errorMessage, inputField) {
+  errorLocation.innerHTML = errorMessage(errorMessage);
   setTimeout(removeError, 2000, errorLocation, inputField);
 }
 
-function errorMessage(errorDescription) {
+function errorMessage(errorMessage) {
   return `<img src="./assets/warning.svg" class="warning-icon">
         A ${errorDescription} is required.`;
 }
@@ -147,24 +148,39 @@ function submit(category, goal, minutes, seconds) {
 function logActivity() {
   displayElement("completed-view");
   hideElement("timer-view");
-  document.querySelector(".no-activities-message").outerText = "";
-  createActivityCard(currentActivity);
+  hideElement("no-activities-message");
+  displayActivityCards();
+  // currentActivity.saveToStorage(pastActivities);
 }
 
 function createNewActivity() {
   hideElement("completed-view");
   displayElement("new-activities-view");
+  hideElement("log-activity-button");
+  document.querySelector(".start-timer-button").innerText = "START";
   document.querySelector("form").reset();
   main.querySelector(".active").classList.remove("active");
-  deactivateButton(document.querySelector(`.${currentActivity.catego
+  disableCategoryButtons();
 }
 
-function createActivityCard(activity) {
-  document.querySelector('.new-cards').innerHTML += `
-  <article class="card ${activity.category}-card" id="${activity.id}">
-    ${activity.description.toUpperCase()} <br>
-    ${activity.timeCardMin} MIN
-  </article>
-  `;
+function displayActivityCards() {
+  document.querySelector('.card-section').innerHTML = "";
+  for (var i = 0; i < pastActivities.length; i++) {
+    var pastCard = `
+    <div class="card" id="${pastActivities[i].id}">
+      <p class="card-cat">${pastActivities[i].category}</p>
+      <p class="card-min">${pastActivities[i].timeCardMin} MIN</p> </br>
+      <p class="card-desc">${pastActivities[i].description}</p>
+    </div>
+    `;
+    document.querySelector('.card-section').insertAdjacentHTML("afterbegin", pastCard);
+  }
 }
 
+// function retrieveStoredActivities() {
+//   pastActivities = JSON.parse(localStorage.getItem("storedActivities")) || [];
+//   for (var i = 0; i < savedCards.length; i++) {
+//     pastActivities[i] = new Idea(pastActivities[i].category, pastActivities[i].description, pastActivities[i].minutes, pastActivities[i].seconds);
+//   }
+//   // displayCards();
+// }
