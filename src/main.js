@@ -151,6 +151,5 @@ function createNewActivity() {
   document.querySelector(".completed-view").classList.add("hidden");
   document.querySelector(".new-activities-view").classList.remove("hidden");
   form.reset();
-  form.querySelector(".active").classList.remove("active");
-  // form.classList.value = ""; change icon color to white
+  deactivateButton(document.querySelector(`.${currentActivity.category}-button`, document.querySelector(".start-timer-button")));
 }
