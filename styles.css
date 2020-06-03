@@ -248,7 +248,8 @@ form,
   }
 
   .new-activities-view,
-  .timer-view {
+  .timer-view,
+  .completed-view {
     height: 600px;
     width: 100%;
   }

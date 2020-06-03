@@ -17,20 +17,20 @@
         <form>
           <h3>Select a category:</h3>
           <div class="button-options">
-            <button class="study-button activity-button">
+            <button class="study-button activity-button" id="study">
               <img src="./assets/study.svg" class="icon" id="study" alt="Image of lightbulb">
               Study
             </button>
-            <button class="meditate-button activity-button">
+            <button class="meditate-button activity-button" id="meditate">
               <img src="./assets/meditate.svg" class="icon" id="meditate" alt="Image of lotus flower">
               Meditate
             </button>
-            <button class="exercise-button activity-button">
+            <button class="exercise-button activity-button" id="exercise">
               <img src="./assets/exercise.svg" class="icon" id="exercise" alt="Image of tennis shoe">
               Exercise
             </button>
           </div>
-          <span class="activity-error error-text"></span>
+          <span class="category-error error-text"></span>
           <label for="description">What would you like to accomplish during this time?</label>
           <input type="text" class="inputs" id="description-text" maxlength="50" minlength="0">
           <span class="goal-error error-text"></span>

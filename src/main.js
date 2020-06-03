@@ -1,52 +1,46 @@
-var form = document.querySelector("form");
+var main = document.querySelector("main");
 var pastActivities = [];
 var currentActivity;
 
-document.querySelector("main").addEventListener("click", clickHandler);
+main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
   if (event.target.closest(".activity-button")) {
     event.preventDefault();
     var button = event.target.closest(".activity-button");
-    var btnIcon = button.querySelector("img");
-    var startTimerButton = document.querySelector(".start-timer-button");
-    disableCategoryButtons(startTimerButton);
-    activateButton(button, startTimerButton);
+    var category = button.id;
+    disableCategoryButtons();
+    activateButton(button, category);
   }
-  if (event.target.closest(".start-activity-button")) {
+  if (event.target.classList.contains("start-activity-button")) {
     validateForm(event);
   }
-  if (event.target.closest(".start-timer-button")) {
+  if (event.target.classList.contains("start-timer-button")) {
     currentActivity.noMultipleStarts();
   }
-  if (event.target.closest(".log-activity-button")) {
+  if (event.target.classList.contains("log-activity-button")) {
     logActivity();
-  } if (event.target.closest(".create-activity-button")) {
+  } if (event.target.classList.contains("create-activity-button")) {
     createNewActivity();
   }
 }
 
-function activateButton(button, startTimerButton) {
+function activateButton(button, category) {
   button.classList.add("active");
-  var btnIcon = button.querySelector("img");
-  btnIcon.src = `./assets/${btnIcon.id}-active.svg`;
-  form.classList.add(`${btnIcon.id}`);
-  document.querySelector(".start-timer-button").classList.add(`${btnIcon.id}`);
+  button.querySelector("img").src = `./assets/${category}-active.svg`;
+  main.classList.add(`${category}`);
+  document.querySelector(".start-timer-button").classList.add(`${category}`);
 }
 
-function deactivateButton(button, startTimerButton) {
-  button.classList.remove("active");
-  var btnIcon = button.querySelector("img");
-  btnIcon.src = `./assets/${btnIcon.id}.svg`;
-  form.classList.remove(`${btnIcon.id}`);
-  document.querySelector(".start-timer-button").classList.remove(`${btnIcon.id}`);
-}
-
-function disableCategoryButtons(startTimerButton) {
-  var allCategoryButtons = form.querySelectorAll(".activity-button");
+function disableCategoryButtons() {
+  var allCategoryButtons = main.querySelectorAll(".activity-button");
   for (var i = 0; i < allCategoryButtons.length; i++) {
-    deactivateButton(allCategoryButtons[i], startTimerButton);
+    allCategoryButtons[i].classList.remove("active");
+    var buttonIcon = allCategoryButtons[i].querySelector("img");
+    buttonIcon.src = `./assets/${buttonIcon.id}.svg`;
   }
+  main.classList.remove(`${buttonIcon.id}`);
+  document.querySelector(".start-timer-button").classList.remove(`${buttonIcon.id}`);
 }
 
 function validateForm(event) {
@@ -60,13 +54,13 @@ function validateForm(event) {
 }
 
 function checkCategories() {
-  if (!form.querySelector(".active")) {
+  if (!main.querySelector(".active")) {
     hasError = true;
-    var categoryError = document.querySelector(".activity-error");
-    renderError(categoryError, "activity");
+    var categoryError = document.querySelector(".category-error");
+    renderError(categoryError, "category");
   } else {
     hasError = false;
-    return form.classList.value;
+    return main.classList.value;
   }
 }
 
@@ -80,6 +74,14 @@ function checkGoal() {
   }
   document.querySelector(".user-description").innerText = goalInput.value;
   return goalInput.value;
+}
+
+function checkTimeInputs(time) {
+  if (typeof Number(time.value) != "number" || time.value === "" || time.value >= 60) {
+    hasError = true;
+    time.classList.add("error");
+    return true;
+  }
 }
 
 function checkMinuteInput() {
@@ -100,22 +102,14 @@ function checkSecondsInput() {
   return secondsInput.value;
 }
 
-function checkTimeInputs(time) {
-  if (typeof Number(time.value) != "number" || time.value === "" || time.value >= 60) {
-    hasError = true;
-    time.classList.add("error");
-    return true;
-  }
-}
-
 function renderError(errorLocation, errorDescription, inputField) {
   errorLocation.innerHTML = errorMessage(errorDescription);
   setTimeout(removeError, 2000, errorLocation, inputField);
 }
 
-function errorMessage(msg) {
+function errorMessage(errorDescription) {
   return `<img src="./assets/warning.svg" class="warning-icon">
-        A ${msg} is required.`;
+        A ${errorDescription} is required.`;
 }
 
 function removeError(error, input) {
@@ -130,27 +124,35 @@ function removeError(error, input) {
   }
 }
 
+function displayElement(className) {
+  document.querySelector(`.${className}`).classList.remove('hidden');
+}
+
+function hideElement(className) {
+  document.querySelector(`.${className}`).classList.add('hidden');
+}
+
 function submit(category, goal, minutes, seconds) {
   if (!hasError) {
     currentActivity = new Activity(category, goal, minutes, seconds);
     pastActivities.push(currentActivity);
-    document.querySelector(".new-activities-view").classList.add("hidden");
-    document.querySelector(".timer-view").classList.remove("hidden");
     document.getElementById("timer").innerHTML = `${minutes}:${seconds}`;
+    hideElement("new-activities-view");
+    displayElement("timer-view");
   } else {
     hasError = false;
   }
 }
 
 function logActivity() {
-  document.querySelector(".completed-view").classList.remove("hidden");
-  document.querySelector(".timer-view").classList.add("hidden");
+  displayElement("completed-view");
+  hideElement("timer-view");
 }
 
 function createNewActivity() {
-  document.querySelector(".completed-view").classList.add("hidden");
-  document.querySelector(".new-activities-view").classList.remove("hidden");
-  form.reset();
-  form.querySelector(".active").classList.remove("active");
-  // form.classList.value = ""; change icon color to white
+  hideElement("completed-view");
+  displayElement("new-activities-view");
+  document.querySelector("form").reset();
+  main.querySelector(".active").classList.remove("active");
+
 }
