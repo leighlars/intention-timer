@@ -1,4 +1,3 @@
-document.querySelector("main");
 var form = document.querySelector("form");
 var pastActivities = [];
 var currentActivity;
