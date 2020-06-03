@@ -2,7 +2,7 @@ var main = document.querySelector("main");
 var pastActivities = [];
 var currentActivity;
 
-// window.onload = retrieveStoredActivities();
+window.onload = retrieveStoredActivities();
 main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
@@ -171,13 +171,14 @@ function displayActivityCards() {
     <div class="individual-card">
       <span class="card-text" id="${pastActivities[i].id}">
         <p class="card-cat">${pastActivities[i].category.charAt(0).toUpperCase() + pastActivities[i].category.slice(1)}</p>
-        <p class="card-min">${pastActivities[i].timeCardMin} MIN</p> </br>
+        <p class="card-min">${pastActivities[i].timeCardMin} MIN</p>
         <p class="card-desc">${pastActivities[i].description}</p>
       </span>
       <div class="category-indicator"></div>
     </div>
     `;
     document.querySelector('.card-section').insertAdjacentHTML("afterbegin", pastCard);
+    document.querySelector('.category-indicator').classList.add(`${pastActivities[i].category}`);
   }
 }
 
