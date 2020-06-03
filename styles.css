@@ -193,8 +193,7 @@ form,
 }
 
 .start-activity-button {
-  margin-left: 75%;
-  margin-bottom: 10px;
+  margin: 0 0 0 auto;
 }
 
 .create-activity-button {
@@ -249,8 +248,9 @@ form,
 .card-section {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  margin: auto;
   overflow: scroll;
+  padding: 0;
   height: 80%;
   width: 90%;
 }
@@ -261,9 +261,11 @@ form,
   background: #46424D;
   border-radius: 4px;
   box-shadow: 5px 10px #26222D;
-  margin: 10px auto;
-  height: 75px;
-  width: 95%;
+  margin-left: 9px;
+  margin-bottom: 20px;
+  padding: 1%;
+  height: 80px;
+  width: 100%;
 }
 
 .card-text {
@@ -296,8 +298,8 @@ form,
   background: #FFF;
   border: none;
   border-radius: 2px;
-  margin-top: 12px;
-  margin-right: 12px;
+  margin-top: 14px;
+  margin-right: 14px;
   height: 20px;
   width: 3px;
 }

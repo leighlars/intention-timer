@@ -198,7 +198,7 @@ function createNewActivity() {
 function retrieveStoredActivities() {
   pastActivities = JSON.parse(localStorage.getItem("storedActivities")) || [];
   for (var i = 0; i < pastActivities.length; i++) {
-    pastActivities[i] = new Activity(pastActivities[i].category, pastActivities[i].description, pastActivities[i].minutes, pastActivities[i].seconds);
+    pastActivities[i] = new Activity(pastActivities[i].category, pastActivities[i].description, pastActivities[i].timeCardMin, pastActivities[i].seconds);
   }
   displayActivityCards();
 }
