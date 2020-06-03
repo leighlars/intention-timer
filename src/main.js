@@ -166,14 +166,22 @@ function logActivity() {
 
 function displayActivityCards() {
   document.querySelector('.card-section').innerHTML = "";
+  if (pastActivities.length > 0) {
+    hideElement("no-activities-message");
+  }
   for (var i = 0; i < pastActivities.length; i++) {
     var pastCard = `
-    <div class="card" id="${pastActivities[i].id}">
-    <p class="card-cat">${pastActivities[i].category.charAt(0).toUpperCase() + pastActivities[i].category.slice(1)}</p>
-    <p class="card-min">${pastActivities[i].timeCardMin} MIN</p> </br>
-    <p class="card-desc">${pastActivities[i].description}</p>
-    </div>`;
+    <div class="individual-card">
+      <span class="card-text" id="${pastActivities[i].id}">
+        <p class="card-cat">${pastActivities[i].category.charAt(0).toUpperCase() + pastActivities[i].category.slice(1)}</p>
+        <p class="card-min">${pastActivities[i].timeCardMin} MIN</p>
+        <p class="card-desc">${pastActivities[i].description}</p>
+      </span>
+      <div class="category-indicator"></div>
+    </div>
+    `;
     document.querySelector('.card-section').insertAdjacentHTML("afterbegin", pastCard);
+    document.querySelector('.category-indicator').classList.add(`${pastActivities[i].category}`);
   }
 }
 
@@ -190,7 +198,7 @@ function createNewActivity() {
 function retrieveStoredActivities() {
   pastActivities = JSON.parse(localStorage.getItem("storedActivities")) || [];
   for (var i = 0; i < pastActivities.length; i++) {
-    pastActivities[i] = new Activity(pastActivities[i].category, pastActivities[i].description, pastActivities[i].minutes, pastActivities[i].seconds);
+    pastActivities[i] = new Activity(pastActivities[i].category, pastActivities[i].description, pastActivities[i].timeCardMin, pastActivities[i].seconds);
   }
   displayActivityCards();
 }
