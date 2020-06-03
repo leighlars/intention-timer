@@ -50,8 +50,8 @@ function validateForm(event) {
   var hasError;
   var category = checkCategories();
   var goal = checkGoal();
-  var minutes = checkMinuteInput();
-  var seconds = checkSecondsInput();
+  var minutes = checkTimeInput("minute");
+  var seconds = checkTimeInput("seconds");
   submit(category, goal, minutes, seconds);
 }
 
@@ -78,7 +78,7 @@ function checkGoal() {
   return goalInput.value;
 }
 
-function checkTimeInputs(time) {
+function timeValidation(time) {
   if (typeof Number(time.value) != "number" || time.value === "" || time.value >= 60) {
     hasError = true;
     time.classList.add("error");
@@ -86,32 +86,28 @@ function checkTimeInputs(time) {
   }
 }
 
-function checkMinuteInput() {
-  var minuteInput = document.querySelector("#minute-value");
-  if (checkTimeInputs(minuteInput)) {
-    renderError(document.querySelector(".min-error"), "number between 0-59", minuteInput);
-    return;
+function checkTimeInput(timeType) {
+  eval(
+    `  var ${timeType}Input = document.querySelector("#${timeType}-value");
+       if (timeValidation(${timeType}Input)) {
+         renderError(document.querySelector(".${timeType}-error"), "number between 0-59", ${timeType}Input);
+        var timeValue;
+      }
+      var timeValue = ${timeType}Input.value;`
+    )
+  if (timeValue) {
+    return timeValue;
   }
-  return minuteInput.value;
 }
 
-function checkSecondsInput() {
-  var secondsInput = document.querySelector("#seconds-value");
-  if (checkTimeInputs(secondsInput)) {
-    renderError(document.querySelector(".seconds-error"), "number between 0-59", secondsInput);
-    return;
-  }
-  return secondsInput.value;
-}
-
-function renderError(errorLocation, errorMessage, inputField) {
-  errorLocation.innerHTML = errorMessage(errorMessage);
+function renderError(errorLocation, errorDescription, inputField) {
+  errorLocation.innerHTML = errorMessage(errorDescription);
   setTimeout(removeError, 2000, errorLocation, inputField);
 }
 
-function errorMessage(errorMessage) {
+function errorMessage(errorDescription) {
   return `<img src="./assets/warning.svg" class="warning-icon">
-        A ${errorMessage} is required.`;
+        A ${errorDescription} is required.`;
 }
 
 function removeError(error, input) {
@@ -190,8 +186,6 @@ function createNewActivity() {
   main.querySelector(".active").classList.remove("active");
   disableCategoryButtons();
 }
-
-
 
 function retrieveStoredActivities() {
   pastActivities = JSON.parse(localStorage.getItem("storedActivities")) || [];
