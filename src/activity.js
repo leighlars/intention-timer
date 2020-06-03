@@ -12,13 +12,9 @@ class Activity {
   startTimer() {
     this.started = true;
     var counting = setInterval(function() {
-      // countdown.innerText = `${currentActivity.minutes}:${currentActivity.seconds < 10 ? "0" + currentActivity.seconds : currentActivity.seconds}`;
-      // document.querySelector(".start-timer-button").innerText = "In Progress";
       currentActivity.renderTimer();
       currentActivity.seconds--;
       if (currentActivity.minutes <= 0 && currentActivity.seconds === -1) {
-        // this.completed = true;
-        // var completionStatus = this.completed;
         clearInterval(counting);
         currentActivity.markComplete();
       } else if (currentActivity.seconds === -1) {
@@ -36,22 +32,22 @@ class Activity {
 
   markComplete() {
     this.completed = true;
-    logActivity();
+    document.querySelector(".log-activity-button").classList.remove("hidden");
     currentActivity.renderComplete();
   }
-  
-  renderComplete() {
-    this.render("COMPLETE!", "Mission accomplished!");
-    document.getElementById("timer").classList.add("complete");
+
+  render(buttonText, timerText) {
+    document.getElementById("timer").innerText = timerText;
+    document.querySelector(".start-timer-button").innerText = buttonText;
   }
 
   renderTimer() {
     this.render("In Progress", `${currentActivity.minutes}:${currentActivity.seconds < 10 ? "0" + currentActivity.seconds : currentActivity.seconds}`);
   }
 
-  render(buttonText, timerText) {
-    document.getElementById("timer").innerText = timerText;
-    document.querySelector(".start-timer-button").innerText = buttonText;
+  renderComplete() {
+    this.render("COMPLETE!", "Mission accomplished!");
+    document.getElementById("timer").classList.add("complete");
   }
 
   saveToStorage() {

@@ -1,8 +1,8 @@
-var form = document.querySelector("form");
+var main = document.querySelector("main");
 var pastActivities = [];
 var currentActivity;
 
-document.querySelector("main").addEventListener("click", clickHandler);
+main.addEventListener("click", clickHandler);
 
 function clickHandler(event) {
   if (event.target.closest(".activity-button")) {
@@ -153,6 +153,5 @@ function createNewActivity() {
   document.querySelector(".completed-view").classList.add("hidden");
   document.querySelector(".new-activities-view").classList.remove("hidden");
   form.reset();
-  form.querySelector(".active").classList.remove("active");
-  // form.classList.value = ""; change icon color to white
+  form.querySelector("active").classList.remove("active");
 }
