@@ -35,16 +35,13 @@ Our estimated schedule is as follows:
 
 5/28: We completed the HTML/CSS for the page and for the responsive media query in respect to the rubric and given colors.  We added a hover float effect to the buttons.
 
-
-<p align="center"> Image of Desktop View </br>
-  <img width="460" height="300" src="" alt="Screenshot of Desktop View">
+<p align="center">Image of Desktop View </br>
+  <img width="460" height="300" src="https://github.com/leighlars/intention-timer/blob/master/readme-images/desktop-new-activity-view.png" alt="Screenshot of Desktop View">
 </p>
-#### Image of Desktop View
 
-![image of desktop view](/readme-images/desktop-new-activity-view.png)
-
-#### Image of Mobile View
-![image of mobile view](/readme-images/mobile-new-activity.png)
+<p align="center">Image of Mobile View </br>
+  <img width="300" height="500" src="https://github.com/leighlars/intention-timer/blob/master/readme-images/mobile-new-activity.png" alt="Screenshot of Mobile View">
+</p>
 
 5/29: We began to write the functionality to instantiate the activity class, and add the activity to data model. We crafted form validation: if the fields are empty or activity is not selected, or if the minutes/ seconds input is not a number, or if the description is longer than 50 characters, the user fulfill the requirements to start the activity and move on to the next page. The activity selected displays the appropriately covered icon, text and border as given in the spec.
 
@@ -65,7 +62,7 @@ Our estimated schedule is as follows:
 </p>
 
 <p align="center">Partial form submission event with error </br>
-  <img width="460" height="300" src="https://media.giphy.com/media/L0BDq6RcQvOmL9qyR3/giphy.gif" alt="Video of partial form submission event">
+  <img width="460" height="500" src="https://media.giphy.com/media/L0BDq6RcQvOmL9qyR3/giphy.gif" alt="Video of partial form submission event">
 </p>
 
 <p align="center">Blank form submission event and timeout </br>
