@@ -74,6 +74,6 @@ Our estimated schedule is as follows:
 </p>
 
 <p align="center"> New activity view on mobile through to log activity </br>
-  <img width="400" height="500" src="https://media.giphy.com/media/THTuS0GpYcTIuEvHoM/giphy.gif" alt="video of New Activity view through to log activity">
+  <img width="300" height="500" src="https://media.giphy.com/media/THTuS0GpYcTIuEvHoM/giphy.gif" alt="video of New Activity view through to log activity">
 </p>
 
