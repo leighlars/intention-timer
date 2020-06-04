@@ -35,11 +35,12 @@ Our estimated schedule is as follows:
 
 5/28: We completed the HTML/CSS for the page and for the responsive media query in respect to the rubric and given colors.  We added a hover float effect to the buttons.
 
-**Image of Desktop View**
-![image of desktop view](/readme-images/desktop-view.png)
+#### Image of Desktop View
 
-**Image of Mobile View**
-![image of mobile view](/readme-images/mobile-view.png)
+![image of desktop view](/readme-images/desktop-new-activity-view.png)
+
+#### Image of Mobile View
+![image of mobile view](/readme-images/mobile-new-activity.png)
 
 5/29: We began to write the functionality to instantiate the activity class, and add the activity to data model. We crafted form validation: if the fields are empty or activity is not selected, or if the minutes/ seconds input is not a number, or if the description is longer than 50 characters, the user fulfill the requirements to start the activity and move on to the next page. The activity selected displays the appropriately covered icon, text and border as given in the spec.
 
@@ -51,17 +52,20 @@ Our estimated schedule is as follows:
 
 **Functionality Showcase**
 
-### New activity view through to log activity. 
-![video of New Activity view through to log activity](https://media.giphy.com/media/kdRlyL785BKGA9HoMF/giphy.gif)
+#### New activity view through to log activity.
+![video of New Activity view through to log activity](https://media.giphy.com/media/YrflflDijNUkfWW87s/giphy.gif)
 
-### Start timer and watch decreasing seconds.
-![video of the seconds counting down](https://media.giphy.com/media/jtXBUY0MLe7TqyLcjD/giphy.gif)
+#### Start timer and watch decreasing seconds.
+![video of the seconds counting down](https://media.giphy.com/media/XZssrv6k5Ydyo3dCDB/giphy.gif)
 
-### Partial form submission event.
-![video of a partial form submission event](https://media.giphy.com/media/VEUw2ydXV20rP3znTA/giphy.gif)
+#### Partial form submission event.
+![video of a partial form submission event](https://media.giphy.com/media/L0BDq6RcQvOmL9qyR3/giphy.gif)
 
-### Blank form submission event.
-![Video of blank form submission event](https://media.giphy.com/media/StLm9xRCY6NrUuEV6z/giphy.gif)
+#### Blank form submission event and timeout.
+![Video of blank form submission event and timeout](https://media.giphy.com/media/htXpprwARwp788N301/giphy.gif)
 
-### Past Activity cards in local storage.
-![Video of past activities cards stored in local storage](https://media.giphy.com/media/dt1BB5JP3F0iCnIfbV/giphy.gif)
+#### Past Activity cards in local storage.
+![Video of past activities cards stored in local storage](https://media.giphy.com/media/UUytUoUXoKdXO7bSuc/giphy.gif)
+
+#### New activity view on mobile through to log activity.
+![video of New Activity view through to log activity](https://media.giphy.com/media/THTuS0GpYcTIuEvHoM/giphy.gif)
