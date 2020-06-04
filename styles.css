@@ -227,6 +227,11 @@ form,
 
 #timer.complete {
   font-size: 28px;
+  /* color: #FFF;
+  font-weight: bolder;
+  font-size: 8vh;
+  margin: 0;
+  margin-bottom: 10px; */
 }
 
 .start-timer-button {
