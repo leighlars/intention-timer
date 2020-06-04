@@ -35,6 +35,10 @@ Our estimated schedule is as follows:
 
 5/28: We completed the HTML/CSS for the page and for the responsive media query in respect to the rubric and given colors.  We added a hover float effect to the buttons.
 
+
+<p align="center"> Image of Desktop View </br>
+  <img width="460" height="300" src="" alt="Screenshot of Desktop View">
+</p>
 #### Image of Desktop View
 
 ![image of desktop view](/readme-images/desktop-new-activity-view.png)
@@ -50,22 +54,29 @@ Our estimated schedule is as follows:
 
 6/3: Started the day with fixing several bugs and tweaking elements of our design. We removed the temporary alert when the timer function finished and we added "mission accomplished!" as our congratulatory message. We took a team vote and agreed that the word "start" displaying on the decrementing timer was confusing. We updated the start buttons innerText to "In progress" once the timer is initiated. Created the “Log Activity” button and built the functionality for it to render a past activity “card” in the past activity view. We also were able to persist these activity cards into local storage in today's schedule.
 
-**Functionality Showcase**
+## Functionality Showcase
 
-#### New activity view through to log activity.
-![video of New Activity view through to log activity](https://media.giphy.com/media/YrflflDijNUkfWW87s/giphy.gif)
+<p align="center">New activity view through to log activity </br>
+  <img width="460" height="300" src="https://media.giphy.com/media/YrflflDijNUkfWW87s/giphy.gif" alt="Video of new activity view through to log activity ">
+</p>
 
-#### Start timer and watch decreasing seconds.
-![video of the seconds counting down](https://media.giphy.com/media/XZssrv6k5Ydyo3dCDB/giphy.gif)
+<p align="center"> Start timer and watch decreasing seconds </br>
+  <img width="460" height="300" src="https://media.giphy.com/media/XZssrv6k5Ydyo3dCDB/giphy.gif" alt="Video of start timer and watch decreasing seconds">
+</p>
 
-#### Partial form submission event.
-![video of a partial form submission event](https://media.giphy.com/media/L0BDq6RcQvOmL9qyR3/giphy.gif)
+<p align="center">Partial form submission event with error </br>
+  <img width="460" height="300" src="https://media.giphy.com/media/L0BDq6RcQvOmL9qyR3/giphy.gif" alt="Video of partial form submission event">
+</p>
 
-#### Blank form submission event and timeout.
-![Video of blank form submission event and timeout](https://media.giphy.com/media/htXpprwARwp788N301/giphy.gif)
+<p align="center">Blank form submission event and timeout </br>
+  <img width="460" height="300" src="https://media.giphy.com/media/htXpprwARwp788N301/giphy.gif" alt="Video of blank form submission event and timeout">
+</p>
 
-#### Past Activity cards in local storage.
-![Video of past activities cards stored in local storage](https://media.giphy.com/media/UUytUoUXoKdXO7bSuc/giphy.gif)
+<p align="center">Past Activity cards in local storage </br>
+  <img width="460" height="300" src="https://media.giphy.com/media/UUytUoUXoKdXO7bSuc/giphy.gif" alt="Video of past activities cards stored in local storage">
+</p>
 
-#### New activity view on mobile through to log activity.
-![video of New Activity view through to log activity](https://media.giphy.com/media/THTuS0GpYcTIuEvHoM/giphy.gif)
+<p align="center"> New activity view on mobile through to log activity </br>
+  <img width="400" height="500" src="https://media.giphy.com/media/THTuS0GpYcTIuEvHoM/giphy.gif" alt="video of New Activity view through to log activity">
+</p>
+
