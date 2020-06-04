@@ -178,8 +178,7 @@ function displayActivityCards() {
         <p class="card-desc">${pastActivities[i].description}</p>
       </span>
       <div class="category-indicator"></div>
-    </div>
-    `;
+    </div>`;
     document.querySelector('.card-section').insertAdjacentHTML("afterbegin", pastCard);
     document.querySelector('.category-indicator').classList.add(`${pastActivities[i].category}`);
   }
@@ -197,8 +196,5 @@ function createNewActivity() {
 
 function retrieveStoredActivities() {
   pastActivities = JSON.parse(localStorage.getItem("storedActivities")) || [];
-  for (var i = 0; i < pastActivities.length; i++) {
-    pastActivities[i] = new Activity(pastActivities[i].category, pastActivities[i].description, pastActivities[i].timeCardMin, pastActivities[i].seconds);
-  }
   displayActivityCards();
 }
