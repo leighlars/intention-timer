@@ -178,8 +178,7 @@ function displayActivityCards() {
         <p class="card-desc">${pastActivities[i].description}</p>
       </span>
       <div class="category-indicator"></div>
-    </div>
-    `;
+    </div>`;
     document.querySelector('.card-section').insertAdjacentHTML("afterbegin", pastCard);
     document.querySelector('.category-indicator').classList.add(`${pastActivities[i].category}`);
   }
