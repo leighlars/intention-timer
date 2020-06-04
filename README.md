@@ -62,7 +62,7 @@ Our estimated schedule is as follows:
 </p>
 
 <p align="center">Partial form submission event with error </br>
-  <img width="460" height="500" src="https://media.giphy.com/media/L0BDq6RcQvOmL9qyR3/giphy.gif" alt="Video of partial form submission event">
+  <img width="460" height="300" src="https://media.giphy.com/media/L0BDq6RcQvOmL9qyR3/giphy.gif" alt="Video of partial form submission event">
 </p>
 
 <p align="center">Blank form submission event and timeout </br>
